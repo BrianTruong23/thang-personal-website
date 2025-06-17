@@ -1,0 +1,185 @@
+/* General Styles */
+
+html {
+    scroll-padding-top: 80px; /* Adjust to match your nav height */
+  }
+
+  
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+  }
+  
+  .section {
+    padding: 80px 30px;
+    max-width: 1200px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  
+  /* Navigation */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+  }
+  
+  .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a.active {
+    color: #ffdf6b;
+  }
+  
+  /* Intro */
+  #intro {
+    height: 100vh;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/The_Apollonian_Court%2C_Ceiling%2C_by_Giovanni_Battista_Tiepolo%2C_Wurzburg_Residence.jpg/2560px-The_Apollonian_Court%2C_Ceiling%2C_by_Giovanni_Battista_Tiepolo%2C_Wurzburg_Residence.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding-top: 100px;
+  }
+  
+  #intro h1 {
+    font-size: 8vw;
+    line-height: 1;
+  }
+  
+  #intro p {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: auto;
+    padding: 0 20px;
+  }
+  
+  /* Blog */
+  .blog-posts article {
+    background-color: #111;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-left: 5px solid #ffdf6b;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  }
+  
+  /* Creative */
+  .creative-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .card {
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    padding: 30px;
+    width: 280px;
+    text-align: center;
+    font-size: 1.4em;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* Contact Button */
+  button.contact {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1em;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  button.contact.hovered,
+  button.contact:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #111;
+    font-size: 0.9em;
+    color: #aaa;
+  } 
+  
+  @media (max-width: 768px) {
+    #intro h1 {
+      font-size: 12vw;
+    }
+  
+    .creative-gallery {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;500;700&display=swap');
+  
