@@ -3,58 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thang Truong | Designer & Developer</title>
+  <title>Thang Truong</title>
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <body>
-
-  <!-- Navigation -->
   <nav>
-    <div class="logo">Thang Truong</div>
-    <ul class="nav-links">
-      <li><a href="#intro">About</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#creative">Creative</a></li>
+    <div class="logo">R</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Experience</a></li>
+      <li><a href="#">What I Do</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
+
+    <!-- 🔀 View Toggle Switch -->
+    <div class="toggle-switch" id="viewToggle">
+      <div class="slider" id="slider"></div>
+      <div class="toggle-option gallery active" data-view="gallery">
+        <i class="fas fa-th-large"></i>
+      </div>
+      <div class="toggle-option list" data-view="list">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="intro" class="section">
-    <h1>DESIGNER<br>& DEVELOPER</h1>
-    <p>I am a developer and UX/UI designer passionate about art, technology, and minimal aesthetics. With experience in full-stack development and digital design, I craft experiences that blend function and emotion.</p>
-    <button class="contact">CONTACT ME</button>
-  </section>
-
-  <!-- Blog Section -->
-  <section id="blog" class="section">
-    <h2>Words & Ideas</h2>
-    <div class="blog-posts">
-      <article>
-        <h3>The Art of Writing Clean Code</h3>
-        <p>Clean code is about empathy — making your code readable and maintainable for others (and your future self).</p>
-      </article>
-      <article>
-        <h3>Design Thinking for Developers</h3>
-        <p>What if coding problems were approached like design challenges? Welcome to design thinking for devs.</p>
-      </article>
+  <header class="hero">
+    <img src="profile_image.jpeg" alt="Thang Truong" class="profile-pic" />
+    <h1>Hi I'm <span class="highlight">Thang Truong</span></h1>
+    <p class="role">☁️ Cloud Architect</p>
+    <p class="location"><span class="dot"></span> Currently in Dubai 🇦🇪</p>
+    <blockquote>
+      <em>“Building bridges between code, cloud, and culture.”</em>
+    </blockquote>
+    <div class="buttons">
+      <a href="#" class="btn">Get in touch →</a>
+      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="icon-link">
+        <i class="fab fa-linkedin fa-2x"></i>
+      </a>
+      <a href="https://github.com/yourusername" target="_blank" class="icon-link">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
     </div>
-  </section>
+  </header>
 
-  <!-- Creative Section -->
-  <section id="creative" class="section">
-    <h2>Creative Explorations</h2>
-    <p>I merge creativity with engineering. I love building things that move, respond, and tell a story through elegant interactions.</p>
-    <div class="creative-gallery">
-      <div class="card">🎨 UI Sketches</div>
-      <div class="card">🧠 Microinteractions</div>
-      <div class="card">🌌 Web Animations</div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Thang Truong. Crafted with ❤️ in HTML, CSS, and JavaScript. Hosted on GitHub Pages.</p>
-  </footer>
+  <script src="script.js"></script>
 </body>
 </html>

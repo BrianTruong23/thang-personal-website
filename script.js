@@ -1,54 +1,15 @@
-// Smooth scroll for nav links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
+const toggle = document.getElementById("viewToggle");
+const slider = document.getElementById("slider");
+const options = toggle.querySelectorAll(".toggle-option");
+
+options.forEach((option, index) => {
+  option.addEventListener("click", () => {
+    slider.style.transform = `translateX(${index * 100}%)`;
+
+    options.forEach(o => o.classList.remove("active"));
+    option.classList.add("active");
+
+    // You can optionally do something with the selected view:
+    console.log("Selected view:", option.dataset.view);
   });
-  
-  // Highlight nav link of current section
-  window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('.section');
-    const scrollPos = window.scrollY + 100;
-  
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const id = section.getAttribute('id');
-      const navLink = document.querySelector(`nav a[href="#${id}"]`);
-  
-      if (scrollPos >= top && scrollPos < top + section.offsetHeight) {
-        navLink?.classList.add('active');
-      } else {
-        navLink?.classList.remove('active');
-      }
-    });
-  });
-  
-  // Optional: Button hover interaction
-  const contactButton = document.querySelector('button.contact');
-  if (contactButton) {
-    contactButton.addEventListener('mouseenter', () => {
-      contactButton.classList.add('hovered');
-    });
-    contactButton.addEventListener('mouseleave', () => {
-      contactButton.classList.remove('hovered');
-    });
-  }
-  
-  // Fade-in sections on scroll
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, {
-    threshold: 0.2
-  });
-  
-  document.querySelectorAll('.section').forEach(section => {
-    observer.observe(section);
-  });
-  
+});
