@@ -71,7 +71,7 @@ function scrollFunction() {
 
 
 
-const roles = ["a Software Engineer.", "an AI fanatic.", "an AMC A-list member."];
+const roles = ["a Software Engineer.", "an AI fanatic.", "an AMC VIP member."];
 const color = ['red', 'blue', 'black']
 const typewriterSpan = document.getElementById("typewriter");
 
