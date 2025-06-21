@@ -11,49 +11,96 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+  <!-- Font Awesome CDN -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-p6Bx6v7JbHLQIaA0dVz*IUQ8Y+c+ZdX..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
+
 </head>
-<body>
-  <nav>
-    <div class="logo">R</div>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Experience</a></li>
-      <li><a href="#">What I Do</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
 
-    <!-- 🔀 View Toggle Switch -->
-    <div class="toggle-switch" id="viewToggle">
-      <div class="slider" id="slider"></div>
-      <div class="toggle-option gallery active" data-view="gallery">
-        <i class="fas fa-th-large"></i>
-      </div>
-      <div class="toggle-option list" data-view="list">
-        <i class="fas fa-bars"></i>
-      </div>
+
+
+<body class = "light">
+    <div class="container">
+
+        <div id = "nav-bar">
+            <nav>
+                <ul>
+                  <li><a href="#" class="active">Home</a></li>
+                  <li><a href="#">Experience</a></li>
+                  <li><a href="#">Publication</a></li>
+                  <li><a href="#">Play</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+          </div>
+
+        <div class = "inside-container">
+    
+              <section id = 'home-section' class="home-section">
+                    <div id="section1" class="fullpage">
+
+                      <div class = "section1-big-text">
+                        <h1>Hi, my name is Thang</h1>
+                        <p>I am a <span id="typewriter"></span></p>
+                      </div>
+                    
+
+                        <div class="scroll-button">
+                          <p class = "scroll-text">Scroll down to learn more</p>
+                          <p class="scroll-icon">></p>
+                        </div>
+                        
+                    </div>
+
+                    <div id="section2" class="fullpage">
+
+                      <div class="card">
+                        <div class="card-content">
+                          <img src="profile-image.png" alt="Profile" class="profile-pic" />
+
+                          <div class = "card-content-text">
+                            <h4>Thang Thoi Truong</h4>
+                            <h6 class="title">Software Engineer</h6>
+
+                            <div class="icons">
+                              <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                              <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                              <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+                            </div>
+                            
+                            <p>
+                              I just graduated from UT Austin where I spent 4 wonderful years honing the art of coding full stack websites, visualizing data and researching about AI. I was fortunate to be advised by Professor Mishra for my honor thesis and I got to work on cool AI products at UT Austin Liberal Arts. 
+                            </p>
+
+                            <p> I love AI and I can’t wait to build products that impact people! I am super excited to spend the next 5 years at Auburn for my PhD under the guidance of Professor Anh Totti Nguyen.</p>
+
+                            <p>  In my spare time, you can catch me at the cinema, playing tennis, solving Leetcode or at the gym!</p>
+                       
+                          </div>
+                    
+                        </div>
+                      </div>
+                      
+                    </div>
+
+              </section>
+
+              
+              
+    
+        </div>
+              
+
     </div>
-  </nav>
+  
 
-  <header class="hero">
-    <img src="profile_image.jpeg" alt="Thang Truong" class="profile-pic" />
-    <h1>Hi I'm <span class="highlight">Thang Truong</span></h1>
-    <p class="role">☁️ Cloud Architect</p>
-    <p class="location"><span class="dot"></span> Currently in Dubai 🇦🇪</p>
-    <blockquote>
-      <em>“Building bridges between code, cloud, and culture.”</em>
-    </blockquote>
-    <div class="buttons">
-      <a href="#" class="btn">Get in touch →</a>
-      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="icon-link">
-        <i class="fab fa-linkedin fa-2x"></i>
-      </a>
-      <a href="https://github.com/yourusername" target="_blank" class="icon-link">
-        <i class="fab fa-github fa-2x"></i>
-      </a>
-    </div>
-  </header>
+        
+    <script src="script.js"></script>
+  </body>
 
-  <script src="script.js"></script>
-</body>
 </html>

@@ -1,15 +1,96 @@
-const toggle = document.getElementById("viewToggle");
-const slider = document.getElementById("slider");
-const options = toggle.querySelectorAll(".toggle-option");
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("nav ul li a");
+    const sections = document.querySelectorAll("section"); // assumes all sections are in <section> tags
+  
+    links.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+  
+        // Remove 'active' from all links
+        links.forEach(l => l.classList.remove("active"));
+        this.classList.add("active");
+  
+        // Convert link text to lowercase and construct target ID
+        const targetId = this.textContent.toLowerCase() + "-section";
 
-options.forEach((option, index) => {
-  option.addEventListener("click", () => {
-    slider.style.transform = `translateX(${index * 100}%)`;
+        console.log(targetId)
 
-    options.forEach(o => o.classList.remove("active"));
-    option.classList.add("active");
-
-    // You can optionally do something with the selected view:
-    console.log("Selected view:", option.dataset.view);
+        // Hide all sections
+        sections.forEach(section => {
+            // console.log(section.textContent.toLowerCase() + "-section");
+            section.style.display = "none";
+        });
+  
+        // Show the matched section
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.style.display = "flex";
+        }
+      });
+    });
   });
+
+
+
+let hasScrolled = false;
+
+window.addEventListener("wheel", function (e) {
+  if (!hasScrolled && e.deltaY > 0) {
+    document.getElementById("section2").scrollIntoView({ behavior: "smooth" });
+    hasScrolled = true;
+  }
 });
+
+  
+  
+window.onscroll = function() {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  const scrollButton = document.querySelector('.scroll-button');
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollButton.style.opacity = "0"; // Hide button after scrolling down
+  } else {
+    scrollButton.style.opacity = "1"; // Show button at the top
+  }
+}
+
+
+
+const roles = ["Software Engineer", "Data Scientist", "UI/UX Designer"];
+const color = ['red', 'blue', 'black']
+const typewriterSpan = document.getElementById("typewriter");
+
+let roleIndex = 0;
+let charIndex = 0;
+let typing = true;
+
+function typeEffect() {
+  const currentRole = roles[roleIndex];
+
+
+  typewriterSpan.style.fontWeight = "bold";
+  typewriterSpan.style.color = color[roleIndex];
+
+  if (typing) {
+    typewriterSpan.textContent = currentRole.substring(0, charIndex++);
+    if (charIndex > currentRole.length) {
+      typing = false;
+      setTimeout(typeEffect, 1000); // pause before deleting
+      return;
+    }
+  } else {
+    typewriterSpan.textContent = currentRole.substring(0, charIndex--);
+    if (charIndex < 0) {
+      typing = true;
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+  }
+
+  setTimeout(typeEffect, 100);
+}
+
+// Start typing on load
+document.addEventListener("DOMContentLoaded", typeEffect);
+
