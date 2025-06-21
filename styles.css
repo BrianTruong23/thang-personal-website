@@ -324,3 +324,97 @@ nav li a:hover {
   color: #8852B4;
 }
 
+
+/* Contact Box */
+.contact{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #fbeaff, #e0e0ff); 
+
+}
+
+
+.send-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.send-button {
+  background-color: #f7edff; /* soft lavender/purple */
+  color: #000;
+  font-weight: bold;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 999px; /* fully rounded */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.send-button:hover {
+  background-color: #eadaff;
+}
+
+
+.contact-box {
+  position: relative;
+  padding: 40px 30px;
+  border: 1px solid #000;
+  width: 500px;
+  height: auto;
+  background-color: #fff;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height:500px;
+}
+
+.contact-label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  outline: none;
+  border-color: #8000FF;
+  box-shadow: 0 0 5px rgba(128, 0, 255, 0.2);
+}
+
+.contact-textarea {
+  min-height: 250px;
+  resize: vertical;
+}
+
+
+.from-section{
+  display:flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.message-section{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px 0 40px;
+
+}

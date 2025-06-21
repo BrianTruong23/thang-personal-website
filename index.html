@@ -156,7 +156,40 @@
 
 
               <section id = "contact-section">
-                <h2>Experience Section</h2>
+
+                <div class = "contact">
+
+                  <div class="contact-box">
+                
+
+                    <form id="contact-form">
+                   
+                      <div class = "from-section">
+                        <label for="from" class="contact-label">From:</label>
+                        <input type="text" id="from-name" name="name" placeholder="Your name..." class="contact-input" required />
+    
+                      </div>
+
+                      <div class = "from-section">
+                        <label for="from" class="contact-label">From:</label>
+                        <input type="email" id="from-email" name="email" placeholder="Your email..." class="contact-input" required />
+    
+                      </div>
+                    
+                      <div class = "message-section">
+                        <label for="message" class="contact-label">Message:</label>
+                        <textarea id="message" name="message" placeholder="Type in message to send ..." class="contact-textarea" required></textarea>    
+                      </div>
+
+                      <button id= "send-button" class="send-button" type =" submit">Send</button>
+                    </form>
+                    
+
+                  </div>
+
+                </div>
+
+                
 
               </section>
 
@@ -169,8 +202,7 @@
     </div>
 
 
-
-        
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="script.js"></script>
   </body>
 

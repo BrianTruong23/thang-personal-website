@@ -107,3 +107,18 @@ function typeEffect() {
 // Start typing on load
 document.addEventListener("DOMContentLoaded", typeEffect);
 
+// Initialize EmailJS
+emailjs.init("NRo7xETVlRoozDzE9");
+
+// Handle form submission
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm('service_vjlcl0a', 'template_ttjx1yp', this)
+    .then(() => {
+      alert("Message sent successfully!");
+    }, (error) => {
+      console.error("FAILED...", error);
+      alert("Failed to send message.");
+    });
+});
