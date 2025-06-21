@@ -114,9 +114,12 @@ emailjs.init("NRo7xETVlRoozDzE9");
 document.getElementById("contact-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
+  const form = this;
+
   emailjs.sendForm('service_vjlcl0a', 'template_ttjx1yp', this)
     .then(() => {
       alert("Message sent successfully!");
+      form.reset(); 
     }, (error) => {
       console.error("FAILED...", error);
       alert("Failed to send message.");
