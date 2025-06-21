@@ -1,273 +1,326 @@
-/* Reset and global settings */
+/* ---------------------------------------------
+   ✅ Global Reset and Base Styles
+--------------------------------------------- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-/* Let the body stretch full width */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    width: 100%;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-  }
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
 
-  #nav-bar {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-  }
-  
-  
-  /* Center your entire content inside a wrapper */
-  .container {
-    margin: 0 auto;
-    text-align: center;
+html {
+  scroll-behavior: smooth;
+}
 
-  }
-  
 
-  
-  /* f4f4f4 */
-  /* Navigation bar */
-  nav {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    gap: 30px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #333;
-    padding: 10px 15px;
-    border-radius: 20px;
-  }
-  
-  nav ul li a.active {
-    font-weight: bold;
-    background-color: #f4f1ff;
-  }
-  
-  
-  nav li a:hover {
-    color: #8000FF;
-  }
+/* ---------------------------------------------
+   ✅ Navigation Bar
+--------------------------------------------- */
+#nav-bar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
 
+nav {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+nav ul li a.active {
+  font-weight: bold;
+  background-color: #f4f1ff;
+}
+
+nav li a:hover {
+  color: #8000FF;
+}
+
+
+/* ---------------------------------------------
+   ✅ Content Wrapper
+--------------------------------------------- */
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* ---------------------------------------------
+   ✅ Home Section
+--------------------------------------------- */
+.home-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: auto;
+  text-align: center;
+  background-image: url(portfolio-background.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0 30px;
+}
+
+.profile-pic img {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.home-text {
+  max-width: 600px;
+}
+
+.home-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.home-text p {
+  line-height: 2;
+  margin-bottom: 15px;
+}
+
+
+/* ---------------------------------------------
+   ✅ Responsive (Mobile)
+--------------------------------------------- */
+@media (max-width: 768px) {
   .home-section {
-    display: flex
-;
-    gap: 40px;
-    margin: auto;
-    text-align: center;
     flex-direction: column;
-    background-image: url(portfolio-background.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 0 30px;
+    align-items: center;
+    text-align: center;
   }
-  
-  .profile-pic img {
-    width: 100px;
-    height: auto;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
+
   .home-text {
-    max-width: 600px;
+    max-width: 90%;
   }
-  
-  .home-text h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .home-text p {
-    line-height: 2;
-    margin-bottom: 15px;
-  }
-  
-  
-
-  @media (max-width: 768px) {
-    .home-section {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .home-text {
-      max-width: 90%;
-    }
-  }
-  
-
-  .fullpage {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    flex-direction: column;
-    
-  }
-  
-  #section1 .scroll-icon{
-    font-size: 20px;
-  }
-
-  #section1 .section1-big-text{
-    margin-top: -130px;
-  }
-
-  #section1 .scroll-text{
-    font-size: 15px;
-  }
-
-  #section1 .section1-big-text p{
-    font-size: 22px;
-    margin-top: 15px;
-  }
+}
 
 
-  #typewriter::after {
-    content: '|';
-    animation: blink 0.7s infinite;
-  }
-  
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-  
-  
-  
-  
-  #scrollBtn {
-    margin-top: 20px;
-    padding: 12px 24px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-
-  .scroll-button {
-    position: fixed;
-    bottom: 20px; /* Adjust position as needed */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .scroll-icon {
-    transform: rotate(90deg); /* Rotate the ">" to appear as a down arrow */
-    display: inline-block;
-    position: relative;
-    animation: 2.5s scrollIcon infinite; /* Apply the animation */
-    color: #fff;
-  }
-  
-  @keyframes scrollIcon {
-    0% {
-      opacity: 0;
-      top: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      top: 15px; /* Adjust animation movement */
-    }
-  }
-  
-  /* Optional: Smooth scrolling */
-  html {
-    scroll-behavior: smooth;
-  }
-  
+/* ---------------------------------------------
+   ✅ Fullpage Sections (for scroll snap effect)
+--------------------------------------------- */
+.fullpage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  flex-direction: column;
+}
 
 
-  .card {
-    position: relative;
-    width: fit-content;
-    padding: 50px 90px 50px 70px;
-    border-radius: 51px;
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    overflow: hidden;
-    max-width: 950px;
-  }
-  
-  .card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
-    z-index: 0;
-  }
-  
-  .card-content {
-    position: relative;
-    z-index: 1;
-    color: #000;
-    text-align: center;
-    display: flex;
-    gap: 100px;
-  }
+/* ---------------------------------------------
+   ✅ Section 1 Styling
+--------------------------------------------- */
+#section1 .scroll-icon {
+  font-size: 20px;
+}
 
-  .card-content p{
-      font-size: 16px;
-      margin-top: 20px;
-  }
+#section1 .section1-big-text {
+  margin-top: -130px;
+}
 
-  .card-content-text{
-    text-align: left;
-  }
-  
-  .profile-pic {
-    width: 85px;
-    height: 85px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 16px;
-  }
-  
-  .title {
-    font-weight: normal;
-    margin-bottom: 12px;
-    color: #333;
-  }
+#section1 .section1-big-text p {
+  font-size: 22px;
+  margin-top: 15px;
+}
 
-  
-  .icons a {
-    color: #333;
-    margin: 0 10px;
-    font-size: 24px;
-    text-decoration: none;
-    transition: color 0.3s ease;
+#section1 .scroll-text {
+  font-size: 15px;
+}
+
+
+/* ---------------------------------------------
+   ✅ Scroll Button + Animation
+--------------------------------------------- */
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.scroll-icon {
+  transform: rotate(90deg);
+  display: inline-block;
+  position: relative;
+  animation: 2.5s scrollIcon infinite;
+  color: #fff;
+}
+
+@keyframes scrollIcon {
+  0% {
+    opacity: 0;
+    top: 0;
   }
-  
-  .icons a:hover {
-    color: #0072b1; /* e.g., LinkedIn blue */
+  50% {
+    opacity: 1;
   }
-  
+  100% {
+    opacity: 0;
+    top: 15px;
+  }
+}
+
+#scrollBtn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+/* ---------------------------------------------
+   ✅ Typewriter Effect
+--------------------------------------------- */
+#typewriter::after {
+  content: '|';
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+/* ---------------------------------------------
+   ✅ Frosted Glass Card
+--------------------------------------------- */
+.card {
+  position: relative;
+  width: fit-content;
+  max-width: 950px;
+  padding: 50px 90px 50px 70px;
+  border-radius: 51px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  z-index: 0;
+}
+
+
+/* ---------------------------------------------
+   ✅ Card Content Layout
+--------------------------------------------- */
+.card-content {
+  position: relative;
+  z-index: 1;
+  color: #000;
+  text-align: center;
+  display: flex;
+  gap: 100px;
+}
+
+.card-content p {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.card-content-text {
+  text-align: left;
+}
+
+
+/* ---------------------------------------------
+   ✅ Profile Picture (inside card)
+--------------------------------------------- */
+.profile-pic {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+
+/* ---------------------------------------------
+   ✅ Title and Icons
+--------------------------------------------- */
+.title {
+  font-weight: normal;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.icons a {
+  color: #333;
+  margin: 0 10px;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.icons a:hover {
+  color: #0072b1; /* LinkedIn Blue */
+}
+
+
+/* Publication section */
+
+#publication-section{
+  background: linear-gradient(to bottom right, #fbeaff, #e0e0ff); 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  padding: 60px 150px;
+}
+
+#publication-section .publication{
+  text-align: left;
+  margin-top: 50px;
+  display:flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#publication-section  h3{
+  color: #8852B4;
+}
+

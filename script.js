@@ -1,3 +1,16 @@
+
+// // Hide all sections
+const sections = document.querySelectorAll("section");
+
+sections.forEach(section => {
+  section.style.display = "none";
+});
+
+// Show only one section (e.g., 'home')
+document.getElementById("home-section").style.display = "flex";
+
+
+// hide sections at clicks 
 document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll("nav ul li a");
     const sections = document.querySelectorAll("section"); // assumes all sections are in <section> tags
@@ -58,7 +71,7 @@ function scrollFunction() {
 
 
 
-const roles = ["Software Engineer", "Data Scientist", "UI/UX Designer"];
+const roles = ["Software Engineer", "Researcher", "Data Visualizer"];
 const color = ['red', 'blue', 'black']
 const typewriterSpan = document.getElementById("typewriter");
 
