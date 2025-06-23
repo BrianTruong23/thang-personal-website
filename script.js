@@ -164,3 +164,118 @@ document.addEventListener('DOMContentLoaded', () => {
     updateActiveDot(index);
   });
 });
+
+
+
+// PLAY SECTION 
+
+const pairs = [
+  ['React', 'JSX'],
+  ['Git', 'Commit'],
+  ['HTML', 'CSS'],
+  ['Node', 'Express'],
+  ['MongoDB', 'Mongoose'],
+  ['Python', 'Flask'],
+];
+
+const tiles = pairs.flatMap(([tech, tool]) => [
+  { name: tech, pair: tool },
+  { name: tool, pair: tech }
+]);
+
+let flippedTiles = [];
+let matchedPairs = 0;
+let moves = 0;
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function createBoard() {
+  const board = document.getElementById('game-board');
+  board.innerHTML = '';
+  const shuffled = shuffle([...tiles]);
+
+  shuffled.forEach((tileData, index) => {
+    const tile = document.createElement('div');
+    tile.classList.add('flip-tile');
+    tile.dataset.name = tileData.name;
+    tile.dataset.pair = tileData.pair;
+
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.innerText = tileData.name;
+
+    tile.appendChild(content);
+    tile.addEventListener('click', () => handleTileClick(tile));
+    board.appendChild(tile);
+  });
+}
+
+// Load best score from sessionStorage if exists
+let bestMoves = sessionStorage.getItem("bestMoves");
+if (bestMoves) {
+  document.getElementById("best-moves").innerText = bestMoves;
+}
+
+function updateScoreDisplay() {
+  document.getElementById("moves").innerText = moves;
+  document.getElementById("best-moves").innerText = bestMoves || "--";
+}
+
+function resetGame() {
+  flippedTiles = [];
+  matchedPairs = 0;
+  moves = 0;
+  updateScoreDisplay();
+  createBoard();
+}
+
+function handleTileClick(tile) {
+  if (tile.classList.contains("flipped") || tile.classList.contains("matched") || flippedTiles.length >= 2)
+    return;
+
+  tile.classList.add("flipped");
+  flippedTiles.push(tile);
+
+  if (flippedTiles.length === 2) {
+    moves++;
+    updateScoreDisplay();
+
+    const [tile1, tile2] = flippedTiles;
+    if (tile1.dataset.name === tile2.dataset.pair) {
+      tile1.classList.add("matched");
+      tile2.classList.add("matched");
+      matchedPairs++;
+      flippedTiles = [];
+
+      if (matchedPairs === pairs.length) {
+        // Check and update best score
+        if (!bestMoves || moves < bestMoves) {
+          bestMoves = moves;
+          sessionStorage.setItem("bestMoves", bestMoves);
+        }
+        setTimeout(() => {
+          alert(`🎉 You won in ${moves} moves!`);
+          updateScoreDisplay();
+        }, 300);
+      }
+    } else {
+      setTimeout(() => {
+        tile1.classList.remove("flipped");
+        tile2.classList.remove("flipped");
+        flippedTiles = [];
+      }, 1000);
+    }
+  }
+}
+
+document.getElementById("restart-button").addEventListener("click", resetGame);
+document.addEventListener("DOMContentLoaded", () => {
+  createBoard();
+  updateScoreDisplay();
+});

@@ -549,3 +549,82 @@ nav li a:hover {
   margin: 20px 0 40px;
 
 }
+
+
+/* PLAY SECTION */
+#play-section {
+  font-family: sans-serif;
+  color: black;
+  padding: 100px 30px 20px;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.game-info {
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+  line-height: 1.6;
+  font-size: 1rem;
+  padding: 0 10px;
+  text-align: center;
+}
+
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+  color: white;
+}
+
+.flip-tile {
+  width: 100px;
+  height: 100px;
+  background: #16213e;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
+  font-size: 18px;
+}
+
+.flip-tile.flipped,
+.flip-tile.matched {
+  background: #0f3460;
+}
+
+.flip-tile .content {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.flip-tile.flipped .content,
+.flip-tile.matched .content {
+  opacity: 1;
+}
+
+
+#restart-button {
+  margin: 15px auto 15px;
+  padding: 8px 16px;
+  background-color: #0f3460;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+  width: fit-content
+}
+
+#restart-button:hover {
+  background-color: #1a4d8f;
+}
