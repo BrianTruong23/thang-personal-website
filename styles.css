@@ -13,6 +13,7 @@ body {
   background-color: #ffffff;
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
+  background: linear-gradient(to bottom right, #fbeaff, #e0e0ff); 
 }
 
 html {
@@ -332,15 +333,110 @@ nav li a:hover {
 }
 
 
+/* Mobile Size for Card  */
 
-/* Mobile size for card */
+/* Experience Section */
+
+#experience-section {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  padding: 70px 0 0;
+}
+
+.experience-scroll-wrapper {
+  display: flex;
+  position: relative;
+  height: 100%;
+}
+
+.experience-scroll {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+.experience {
+  height: 100vh;
+  scroll-snap-align: start;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.experience1 {
+  background-image: url(laits.jpeg);
+}
+
+.experience2 {
+  background-image: url(ischool.jpg);
+}
+
+.experience3{
+  background-image: url(startup.jpg);
+}
+
+.background-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white; /* Ensures readable text on dark background */
+  z-index: 1;
+}
+
+.background-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
+  z-index: -1;
+}
+
+
+.experience-scroll-indicator {
+  padding: 10px;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 10;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  background-color: #d0aaff;
+  border-radius: 50%;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.dot.active {
+  opacity: 1;
+  background-color: #6c47ff;
+}
+
 
 
 
 /* Publication section */
 
 #publication-section{
-  background: linear-gradient(to bottom right, #fbeaff, #e0e0ff); 
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -368,7 +464,6 @@ nav li a:hover {
   display: flex;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(to bottom right, #fbeaff, #e0e0ff); 
 
 }
 

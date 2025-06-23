@@ -125,3 +125,42 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
       alert("Failed to send message.");
     });
 });
+
+
+// Experience Section 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const experienceSections = document.querySelectorAll('.experience');
+  const indicatorContainer = document.querySelector('.experience-scroll-indicator');
+  const scrollContainer = document.querySelector('.experience-scroll');
+
+  // Clear any existing dots (in case you're hot-reloading or updating)
+  indicatorContainer.innerHTML = '';
+
+  experienceSections.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (index === 0) dot.classList.add('active');
+    
+    dot.addEventListener('click', () => {
+      experienceSections[index].scrollIntoView({ behavior: 'smooth' });
+      updateActiveDot(index);
+    });
+
+    indicatorContainer.appendChild(dot);
+  });
+
+  function updateActiveDot(activeIndex) {
+    const dots = document.querySelectorAll('.experience-scroll-indicator .dot');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === activeIndex);
+    });
+  }
+
+  // Optional: update active dot on scroll
+  scrollContainer.addEventListener('scroll', () => {
+    const index = Math.round(scrollContainer.scrollTop / window.innerHeight);
+    updateActiveDot(index);
+  });
+});
