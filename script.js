@@ -55,6 +55,24 @@ window.addEventListener("wheel", function (e) {
 });
 
   
+
+  const modal = document.getElementById("philosophyModal");
+  const btn = document.getElementById("philosophy");
+  const close = document.getElementById("closeModal");
+
+  btn.onclick = function() {
+    modal.style.display = "flex";
+  }
+
+  close.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
   
 window.onscroll = function() {
   scrollFunction();

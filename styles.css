@@ -109,6 +109,94 @@ nav li a:hover {
 }
 
 
+/* #resume, #philosophy{
+  border-radius: 5px;
+  border: 1px black solid;
+  padding: 10px 5px 10px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+} */
+
+.button-container #resume, #philosophy {
+    padding: 12px 13px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border:none;
+    transition: background-color 0.3s ease;
+  }
+
+  .button-container a{
+    text-decoration: none;
+  }
+
+  .button-container  #resume:hover, #philosophy:hover {
+      background-color: #EAE4D5;
+      color: black;
+    }
+
+  /* Modal styles (improved) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 100px 120px;
+}
+
+.modal-content {
+  background: #fff;
+  position: relative;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+  text-align: center;
+}
+
+.modal-content h2 {
+  font-size: 27px;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #000;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+
 /* ---------------------------------------------
    ✅ Responsive (Mobile)
 --------------------------------------------- */
@@ -689,6 +777,10 @@ footer a:hover {
     font-size: 17px;
   }
 
+  h1{
+    font-size: 30px;
+  }
+
   h2{
     font-size: 25px;
   }
@@ -712,7 +804,7 @@ footer a:hover {
 
 
   #publication-section{
-    padding:10px;
+    padding:20px 30px 10px;
   }
 
   #game-board{
@@ -748,6 +840,15 @@ footer a:hover {
     font-size: 12px;
   }
 
+
+  .contact{
+    padding: 50px 20px 20px;
+  }
+
+  h1{
+    font-size: 28px;
+  }
+
   h2{
     font-size: 22px;
   }
@@ -771,7 +872,7 @@ footer a:hover {
 
 
   #publication-section{
-    padding:10px;
+    padding:20px 40px 10px;
   }
 
 
