@@ -88,6 +88,17 @@ function scrollFunction() {
 }
 
 
+const openCinemaModal = document.getElementById("open-modal-cinema");
+const closeCinemaModal = document.getElementById("close-modal-cinema");
+const cinemaModal = document.getElementById("modal-cinema");
+
+openCinemaModal.onclick = () => cinemaModal.style.display = "block";
+closeCinemaModal.onclick = () => cinemaModal.style.display = "none";
+
+window.onclick = (e) => {
+  if (e.target == cinemaModal) cinemaModal.style.display = "none";
+};
+
 
 const roles = ["a Software Engineer.", "an AI fanatic.", "an AMC VIP member."];
 const color = ['red', 'blue', 'black']
