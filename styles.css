@@ -54,6 +54,7 @@ nav ul li a {
 nav ul li a.active {
   font-weight: bold;
   background-color: #f4f1ff;
+  padding: 5px 3px 5px;
 }
 
 nav li a:hover {
@@ -138,9 +139,9 @@ nav li a:hover {
       background-color: #EAE4D5;
       color: black;
     }
-
-  /* Modal styles (improved) */
-.modal {
+/* Shared Modal Overlay */
+.modal,
+.modal-cinema {
   display: none;
   position: fixed;
   z-index: 1000;
@@ -151,124 +152,161 @@ nav li a:hover {
   background-color: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
+  overflow: auto;
   padding: 100px 120px;
 }
 
-.modal-content {
+/* Shared Modal Content Base */
+.modal-content,
+.modal-cinema-content {
   background: #fff;
-  position: relative;
   padding: 2rem 1.5rem;
   border-radius: 12px;
-
-  width: 100%;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  animation: fadeIn 0.3s ease;
+  width: 100%;
+  position: relative;
 }
 
-.modal-content h2 {
-  font-size: 27px;
+/* Specific Modal Overrides */
+.modal-cinema-content {
+  margin: 5% auto;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: left;
+}
+
+.modal-content h2,
+.modal-cinema-content h3 {
+  font-size: 1.7rem;
   margin-bottom: 1rem;
 }
 
-.modal-content p {
-  font-size: 15px;
+.modal-content p,
+.modal-cinema-content p {
+  font-size: 1rem;
   line-height: 1.6;
+  margin-bottom: 15px;
 }
 
-.close {
+.modal-cinema-content ol {
+  padding-left: 20px;
+}
+
+.modal-cinema-content li {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+/* Close Button */
+.close,
+.modal-cinema-close {
   position: absolute;
   top: 1rem;
   right: 1rem;
   font-size: 1.5rem;
-  cursor: pointer;
+  font-weight: bold;
   color: #888;
+  cursor: pointer;
   transition: color 0.3s;
 }
 
-.close:hover {
+.modal-cinema-close {
+  position: static;
+  float: right;
+  font-size: 24px;
+}
+
+.close:hover,
+.modal-cinema-close:hover {
   color: #000;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+/* Highlighted Text */
+.highlight {
+  color: #0077b6;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
-   /* Modal styles */
-   .modal-cinema {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6);
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .modal,
+  .modal-cinema {
+    padding: 40px 20px;
   }
-  
+
+  .modal-content,
   .modal-cinema-content {
-    background-color: #fff;
-    margin: 5% auto;
-    padding: 30px;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 600px;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    font-family: 'Helvetica Neue', sans-serif;
+    padding: 1.5rem 1rem;
+    width: 100%;
+    margin: 10% auto;
   }
-  
-  .modal-cinema-close {
-    color: #888;
-    float: right;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .modal-cinema-close:hover {
-    color: #000;
-  }
-  
+
+  .modal-content h2,
   .modal-cinema-content h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 1.4rem;
   }
-  
+
+  .modal-content p,
   .modal-cinema-content p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    line-height: 1.6;
-  }
-  
-  .modal-cinema-content ol {
-    padding-left: 20px;
-  }
-  
-  .modal-cinema-content li {
-    margin-bottom: 8px;
     font-size: 0.95rem;
   }
-  
 
+  .modal-cinema-content li {
+    font-size: 0.9rem;
+  }
+
+  .close,
   .modal-cinema-close {
-    color: #aaa;
-    float: right;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal,
+  .modal-cinema {
+    padding: 20px 10px;
   }
 
-  .highlight {
-    color: #0077b6;
-    cursor: pointer;
-    text-decoration: underline;
+  .modal-content,
+  .modal-cinema-content {
+    padding: 1rem;
+    margin: 15% auto;
+    border-radius: 10px;
   }
 
+  .modal-content h2,
+  .modal-cinema-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .modal-content p,
+  .modal-cinema-content p {
+    font-size: 0.9rem;
+  }
+
+  .modal-cinema-content li {
+    font-size: 0.85rem;
+  }
+}
 
 /* ---------------------------------------------
    ✅ Responsive (Mobile)
@@ -310,7 +348,7 @@ nav li a:hover {
   margin-top: -130px;
 }
 
-#section1 .section1-big-text p {
+.section1-big-text{
   font-size: 22px;
   margin-top: 15px;
 }
