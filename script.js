@@ -63,9 +63,9 @@ window.onscroll = function() {
 function scrollFunction() {
   const scrollButton = document.querySelector('.scroll-button');
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    scrollButton.style.opacity = "0"; // Hide button after scrolling down
+    scrollButton.style.display = "none"; // Hide button after scrolling down
   } else {
-    scrollButton.style.opacity = "1"; // Show button at the top
+    scrollButton.style.display = "block"; // Show button at the top
   }
 }
 

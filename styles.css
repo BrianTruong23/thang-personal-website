@@ -628,3 +628,158 @@ nav li a:hover {
 #restart-button:hover {
   background-color: #1a4d8f;
 }
+
+
+
+footer {
+  color: black; /* White text */
+  padding: 20px 0; /* Vertical padding */
+  text-align: center; /* Center align content */
+  font-family: 'Inter', sans-serif; /* Modern font */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Footer Content Wrapper (optional, for max-width) */
+.footer-content {
+  max-width: 1200px; /* Max width for content */
+  margin: 0 auto; /* Center the content */
+  padding: 0 20px; /* Horizontal padding for smaller screens */
+}
+
+/* Paragraphs within footer */
+footer p {
+  margin: 10px 0; /* Spacing for paragraphs */
+  font-size: 0.9em; /* Slightly smaller font size */
+  line-height: 1.5; /* Good line height for readability */
+}
+
+/* Links within footer */
+footer a {
+  color: black; /* Accent color for links */
+  text-decoration: none; /* No underline by default */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+footer a:hover {
+  color: #0097a7; /* Darker accent on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Social media icons or lists (if applicable) */
+.footer-icons { /* This class matches your HTML */
+  margin-top: 15px;
+}
+
+.footer-icons a { /* This targets the anchor tags within .footer-icons */
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 1.2em; /* Larger icons */
+}
+
+
+
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+
+  nav ul li a {
+    padding: 10px 12px 10px;
+    font-size: 17px;
+  }
+
+  h2{
+    font-size: 25px;
+  }
+
+  h3{
+    font-size: 22px;
+  }
+
+
+  h4{
+    font-size: 20px;
+  }
+
+  p{
+    font-size: 18px;
+  }
+
+  cite{
+    font-size: 12px;
+  }
+
+
+  #publication-section{
+    padding:10px;
+  }
+
+  #game-board{
+    grid-template-columns: repeat(4, 70px);
+  }
+
+  .flip-tile{
+    width: 80px;
+    height: 80px;
+  }
+
+
+  footer {
+      padding: 15px 0;
+  }
+
+  footer p {
+      font-size: 0.85em;
+  }
+
+  .footer-icons a {
+      font-size: 1em;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+
+
+  nav ul li a {
+    padding: 0;
+    font-size: 12px;
+  }
+
+  h2{
+    font-size: 22px;
+  }
+
+  h3{
+    font-size: 20px;
+  }
+
+
+  h4{
+    font-size: 18px;
+  }
+
+  p{
+    font-size: 15px;
+  }
+
+  cite{
+    font-size: 10px;
+  }
+
+
+  #publication-section{
+    padding:10px;
+  }
+
+
+  footer {
+      padding: 10px 0;
+  }
+
+  footer p {
+      font-size: 0.8em;
+  }
+}
