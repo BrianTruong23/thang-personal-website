@@ -109,15 +109,9 @@ nav li a:hover {
   margin-bottom: 15px;
 }
 
-
-/* #resume, #philosophy{
-  border-radius: 5px;
-  border: 1px black solid;
-  padding: 10px 5px 10px;
-  cursor: pointer;
-  background-color: black;
-  color: white;
-} */
+.button-container{
+  margin-top: 12px;
+}
 
 .button-container #resume, #philosophy {
     padding: 12px 13px 10px;
