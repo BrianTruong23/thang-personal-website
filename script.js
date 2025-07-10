@@ -242,8 +242,6 @@ function getTiles() {
   ]);
 }
 
-
-
 let flippedTiles = [];
 let matchedPairs = 0;
 let moves = 0;

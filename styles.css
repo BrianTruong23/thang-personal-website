@@ -767,6 +767,7 @@ nav li a:hover {
 
 .category-buttons {
   margin-bottom: 1rem;
+  display:flex;
 }
 
 .category-btn {
