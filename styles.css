@@ -53,7 +53,6 @@ nav ul li a {
 
 nav ul li a.active {
   font-weight: bold;
-  background-color: #f4f1ff;
   padding: 5px 3px 5px;
 }
 
@@ -458,6 +457,11 @@ nav li a:hover {
 .card-content-text {
   text-align: left;
 }
+
+.professor-tag {
+  color: #0077b6; /* More specific selector overrides yours */
+}
+
 
 
 /* ---------------------------------------------
