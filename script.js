@@ -218,6 +218,11 @@ const pairs_marvel = [
 
 let pairs = pairs_tech; // default
 
+const TECH_CATEGORY = 0;
+const MARVEL_CATEGORY = 1;
+
+var categoryChosen = TECH_CATEGORY;
+
 function handleCategory(event) {
   const category = event.target.getAttribute('data-category');
   if (category === 'tech') {
@@ -225,12 +230,16 @@ function handleCategory(event) {
     document.getElementById('game-title').textContent = '🧠 Tech Memory Match';
     document.getElementById('game-info').textContent =
       'Flip two tiles at a time to find matching tech pairs like React ⇔ JSX or Git ⇔ Commit. Match all pairs in the fewest moves possible!';
+    categoryChosen = TECH_CATEGORY;
   } else if (category === 'marvel') {
     pairs = pairs_marvel;
     document.getElementById('game-title').textContent = '🦸 Marvel Memory Match';
     document.getElementById('game-info').textContent =
       'Flip two tiles at a time to match Marvel characters with the person who played them like Iron Man ⇔ Robert Downey Jr. or Wanda ⇔ Elizabeth Olsen. Can you find them all?';
+      categoryChosen = MARVEL_CATEGORY;
   }
+
+  console.log(categoryChosen);
 
   resetGame();
 }
@@ -319,7 +328,12 @@ function handleTileClick(tile) {
           sessionStorage.setItem("bestMoves", bestMoves);
         }
         setTimeout(() => {
-          alert(`🎉 You won in ${moves} moves!`);
+          if (categoryChosen == TECH_CATEGORY){
+             alert(`🎉 You won in ${moves} moves! Fun Fact: These technologies are all in Thang's tool box.`);
+          }else{
+             alert(`🎉 You won in ${moves} moves!`);
+          }
+         
           updateScoreDisplay();
         }, 300);
       }
