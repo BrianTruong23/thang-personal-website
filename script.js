@@ -308,3 +308,6 @@ document.addEventListener("DOMContentLoaded", () => {
   createBoard();
   updateScoreDisplay();
 });
+
+
+
