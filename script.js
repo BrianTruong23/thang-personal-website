@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // PLAY SECTION 
 
-const pairs = [
+const pairs_tech = [
   ['React', 'JSX'],
   ['Git', 'Commit'],
   ['HTML', 'CSS'],
@@ -207,10 +207,42 @@ const pairs = [
   ['Python', 'Flask'],
 ];
 
-const tiles = pairs.flatMap(([tech, tool]) => [
-  { name: tech, pair: tool },
-  { name: tool, pair: tech }
-]);
+const pairs_marvel = [
+  ['Iron Man', 'Robert Downey Jr.'],
+  ['Kingpin', 'Vincent D’Onofrio'],
+  ['Vision', 'Paul Bettany'],
+  ['Wanda', 'Elizabeth Olsen'],
+  ['Moon Knight', 'Oscar Isaac'],
+  ['Miles Morales', 'Shameik Moore'],
+];
+
+let pairs = pairs_tech; // default
+
+function handleCategory(event) {
+  const category = event.target.getAttribute('data-category');
+  if (category === 'tech') {
+    pairs = pairs_tech;
+    document.getElementById('game-title').textContent = '🧠 Tech Memory Match';
+    document.getElementById('game-info').textContent =
+      'Flip two tiles at a time to find matching tech pairs like React ⇔ JSX or Git ⇔ Commit. Match all pairs in the fewest moves possible!';
+  } else if (category === 'marvel') {
+    pairs = pairs_marvel;
+    document.getElementById('game-title').textContent = '🦸 Marvel Memory Match';
+    document.getElementById('game-info').textContent =
+      'Flip two tiles at a time to match Marvel characters with the person who played them like Iron Man ⇔ Robert Downey Jr. or Wanda ⇔ Elizabeth Olsen. Can you find them all?';
+  }
+
+  resetGame();
+}
+
+function getTiles() {
+  return pairs.flatMap(([item1, item2]) => [
+    { name: item1, pair: item2 },
+    { name: item2, pair: item1 }
+  ]);
+}
+
+
 
 let flippedTiles = [];
 let matchedPairs = 0;
@@ -227,7 +259,7 @@ function shuffle(array) {
 function createBoard() {
   const board = document.getElementById('game-board');
   board.innerHTML = '';
-  const shuffled = shuffle([...tiles]);
+  const shuffled = shuffle(getTiles());
 
   shuffled.forEach((tileData, index) => {
     const tile = document.createElement('div');
