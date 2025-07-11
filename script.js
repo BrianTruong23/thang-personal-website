@@ -195,8 +195,41 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+const WORDLE = "wordle"
+const TILE = "tile"
+const tile_game = document.getElementById("tile-game");
+const wordle_game = document.getElementById("wordle-section");
+const NONE = "none"
+
+function make_it_disappear(name_section){
+  const section = document.getElementById(name_section);
+  if (section) section.style.display = NONE;
+}
+
+wordle_game.style.display = NONE;
+
+make_it_disappear("tile-game");
 
 // PLAY SECTION 
+const tile_section = document.getElementById("tile-section");
+if (tile_section) tile_section.style.display = NONE;
+
+document.getElementById(WORDLE)?.addEventListener("click", () => {
+    if (tile_section) tile_section.style.display = NONE;
+    add_active_class_remove_other_active_class("game-type-button", WORDLE, "active-game");
+    add_active_class_remove_other_active_class("category-btn", NONE, "category-btn-active")
+    make_it_disappear("tile-game");
+    wordle_game.style.display = "block";
+});
+
+document.getElementById(TILE)?.addEventListener("click", () => {
+    if (tile_section) tile_section.style.display = "block";
+    add_active_class_remove_other_active_class("game-type-button", TILE, "active-game");
+
+    wordle_game.style.display = "none";
+});
+
+
 
 const pairs_tech = [
   ['React', 'JSX'],
@@ -223,6 +256,90 @@ const MARVEL_CATEGORY = 1;
 
 var categoryChosen = TECH_CATEGORY;
 
+function add_active_class_remove_other_active_class(element_class, category, active_class_name) {
+  // PASS IN NONE IN CATEGORY MAKE EVERY ACTIVE CLASS GO AWAY 
+  const selector = element_class.includes(".") ? element_class : "." + element_class;
+  const categories = document.querySelectorAll(selector);
+  if (category == NONE){
+    categories.forEach((el) => {
+      el.classList.remove(active_class_name);
+    })
+  }else{
+    categories.forEach((el) => {
+      const isMatch = el.getAttribute("data-category") === category;
+
+      if (!isMatch && el.classList.contains(active_class_name)) {
+        el.classList.remove(active_class_name);
+      } else if (isMatch && !el.classList.contains(active_class_name)) {
+        el.classList.add(active_class_name);
+      }
+    });
+  }
+
+}
+
+const welcomeSection = document.querySelector('.welcome-play-section');
+const welcomeText = document.querySelector('.welcome-text');
+const wordleSection = document.getElementById('wordle-section');
+const tileSection = document.getElementById('tile-section');
+
+// Initial hiding of game sections
+tileSection.style.display = 'none';
+wordleSection.style.display = 'none';
+
+let welcomeTextHidden = false;
+
+function showGameSection(sectionToShow, sectionToHide) {
+  if (sectionToHide) {
+    sectionToHide.classList.remove('visible');
+    sectionToHide.style.display = 'none';
+  }
+
+  sectionToShow.style.display = 'block';
+
+  requestAnimationFrame(() => {
+    sectionToShow.classList.add('visible');
+  });
+}
+
+document.getElementById('tile').addEventListener('click', () => {
+  if (!welcomeTextHidden) {
+    welcomeText.classList.add('slide-up');
+    welcomeText.addEventListener('transitionend', function handler() {
+      welcomeText.style.display = 'none';
+      welcomeTextHidden = true;
+
+      showGameSection(tileSection, null);
+
+      welcomeText.removeEventListener('transitionend', handler);
+    }, { once: true });
+  } else {
+    showGameSection(tileSection, wordleSection);
+  }
+});
+
+document.getElementById('wordle').addEventListener('click', () => {
+  if (!welcomeTextHidden) {
+    welcomeText.classList.add('slide-up');
+    welcomeText.addEventListener('transitionend', function handler() {
+      welcomeText.style.display = 'none';
+      welcomeTextHidden = true;
+
+      showGameSection(wordleSection, null);
+
+      welcomeText.removeEventListener('transitionend', handler);
+    }, { once: true });
+  } else {
+    showGameSection(wordleSection, tileSection);
+  }
+});
+
+
+
+
+
+
+
 function handleCategory(event) {
   const category = event.target.getAttribute('data-category');
   if (category === 'tech') {
@@ -231,15 +348,18 @@ function handleCategory(event) {
     document.getElementById('game-info').textContent =
       'Flip two tiles at a time to find matching tech pairs like React ⇔ JSX or Git ⇔ Commit. Match all pairs in the fewest moves possible!';
     categoryChosen = TECH_CATEGORY;
+    add_active_class_remove_other_active_class("category-btn", category, "category-btn-active");
   } else if (category === 'marvel') {
     pairs = pairs_marvel;
     document.getElementById('game-title').textContent = '🦸 Marvel Memory Match';
     document.getElementById('game-info').textContent =
       'Flip two tiles at a time to match Marvel characters with the person who played them like Iron Man ⇔ Robert Downey Jr. or Wanda ⇔ Elizabeth Olsen. Can you find them all?';
       categoryChosen = MARVEL_CATEGORY;
+   add_active_class_remove_other_active_class("category-btn", category, "category-btn-active");
   }
 
-  console.log(categoryChosen);
+
+  tile_game.style.display = "block";
 
   resetGame();
 }

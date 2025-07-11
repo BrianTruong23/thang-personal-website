@@ -760,9 +760,58 @@ nav li a:hover {
 
 }
 
+.welcome-text {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.welcome-text.slide-up {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.welcome-play-section{
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.game-selection-buttons, .category-selection{
+  margin: 12px auto 12px;
+}
+
+.game-type-button {
+  background-color: #D2B8FE;
+  color: white;
+  padding: 12px 24px;
+  margin: 8px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.game-type-button:hover {
+  background-color: #9052FF;
+  transform: translateY(-2px);
+}
+
+.game-type-button:active {
+  transform: scale(0.98);
+}
+
+.active-game{
+  background-color: #9052FF;
+}
+
+
 
 /* Category Section */
-.category-label {
+.category-class {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: #6c3483;
@@ -772,6 +821,8 @@ nav li a:hover {
 .category-buttons {
   display:flex;
   margin: 0 auto 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .category-btn {
@@ -788,6 +839,11 @@ nav li a:hover {
 .category-btn:hover {
   background: #b8a9f1;
   transform: translateY(-2px);
+}
+
+.category-btn-active{
+    background: #b8a9f1;
+
 }
 
 .game-info {

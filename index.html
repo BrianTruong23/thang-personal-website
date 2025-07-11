@@ -281,21 +281,52 @@
 
               <section id="play-section">
 
-                <p class="category-label">🎯 Choose a Category:</p>
-                <div class="category-buttons">
-                  <button onclick="handleCategory(event)" data-category="tech" class="category-btn">💻 Technology</button>
-                  <button onclick="handleCategory(event)" data-category="marvel" class="category-btn">🦸‍♂️ Marvel Characters</button>
-                </div>
-       
-                <h1 id = "game-title">🧠 Tech Memory Match</h1>
-                <p  id = "game-info" class = "game-info">Flip two tiles at a time to find matching tech pairs like React ⇔ JSX or Git ⇔ Commit. Match all pairs in the fewest moves possible!</p>
-                <div id="score">
-                  Moves: <span id="moves">0</span><br>
-                  Best: <span id="best-moves">--</span>
-                </div>                
-                <button id="restart-button">🔁 Restart Game</button>
+              <div class="welcome-play-section">
+                  <div class="welcome-text">
+                    <p>
+                      <strong>Welcome to my playground!</strong> <br> 
+                      This site is meant to be fun and interactive while you explore my personal corner of the web. 
+                      I’ve built a few games for you to enjoy along the way so feel free to play around and see what you discover. <br>
+                      Which game are you in the mood for?
+                    </p>
+                  </div>
 
-                <div id="game-board"></div>
+                  <div class="game-selection-buttons">
+                    <p class = "category-class" >Game Categories: </p>
+                    <button id="tile" class="game-type-button" data-category="tile">🧱 Tile</button>
+                    <button id="wordle" class="game-type-button" data-category="wordle">🔡 Wordle</button>
+                  </div>
+                </div>
+
+        
+                <div id = "wordle-section">
+                  <p>Coming soon!</p>
+
+                </div>
+                <div id="tile-section">
+                  <div class = "category-selection">
+                      <p class="category-class">🎯 Choose a Theme:</p>
+                      <div class="category-buttons">
+                        <button onclick="handleCategory(event)" data-category="tech" class="category-btn">💻 Technology</button>
+                        <button onclick="handleCategory(event)" data-category="marvel" class="category-btn">🦸‍♂️ Marvel Characters</button>
+                      </div>
+                  </div>
+         
+                    
+                    <div id ="tile-game">
+                          <h1 id = "game-title">🧠 Tech Memory Match</h1>
+                          <p  id = "game-info" class = "game-info">Flip two tiles at a time to find matching tech pairs like React ⇔ JSX or Git ⇔ Commit. Match all pairs in the fewest moves possible!</p>
+                          <div id="score">
+                            Moves: <span id="moves">0</span><br>
+                            Best: <span id="best-moves">--</span>
+                          </div>                
+                          <button id="restart-button">🔁 Restart Game</button>
+
+                          <div id="game-board"></div>
+                    </div>
+                
+                </div>
+
               </section>
               
 
