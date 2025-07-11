@@ -215,7 +215,6 @@ const tile_section = document.getElementById("tile-section");
 if (tile_section) tile_section.style.display = NONE;
 
 document.getElementById(WORDLE)?.addEventListener("click", () => {
-    if (tile_section) tile_section.style.display = NONE;
     add_active_class_remove_other_active_class("game-type-button", WORDLE, "active-game");
     add_active_class_remove_other_active_class("category-btn", NONE, "category-btn-active")
     make_it_disappear("tile-game");
@@ -223,7 +222,7 @@ document.getElementById(WORDLE)?.addEventListener("click", () => {
 });
 
 document.getElementById(TILE)?.addEventListener("click", () => {
-    if (tile_section) tile_section.style.display = "block";
+    if (tile_section) tile_section.style.display = "flex";
     add_active_class_remove_other_active_class("game-type-button", TILE, "active-game");
 
     wordle_game.style.display = "none";
@@ -475,3 +474,136 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+const wordList = [
+  "About", "Alert", "Argue", "Beach",
+  "Above", "Alike", "Arise", "Began",
+  "Abuse", "Alive", "Array", "Begin",
+  "Actor", "Allow", "Aside", "Begun",
+  "Acute", "Alone", "Asset", "Being",
+  "Admit", "Along", "Audio", "Below",
+  "Adopt", "Alter", "Audit", "Bench",
+  "Adult", "Among", "Avoid", "Billy",
+  "After", "Anger", "Award", "Birth",
+  "Again", "Angle", "Aware", "Black",
+  "Agent", "Angry", "Badly", "Blame",
+  "Agree", "Apart", "Baker", "Blind",
+  "Ahead", "Apple", "Bases", "Block",
+  "Alarm", "Apply", "Basic", "Blood",
+  "Album", "Arena", "Basis", "Board",
+  "Boost", "Buyer", "China", "Cover",
+  "Booth", "Cable", "Chose", "Craft",
+  "Bound", "Calif", "Civil", "Crash",
+  "Brain", "Carry", "Claim", "Cream",
+  "Brand", "Catch", "Class", "Crime",
+  "Bread", "Cause", "Clean", "Cross",
+  "Break", "Chain", "Clear", "Crowd",
+  "Breed", "Chair", "Click", "Crown",
+  "Brief", "Chart", "Clock", "Curve",
+  "Bring", "Chase", "Close", "Cycle",
+  "Broad", "Cheap", "Coach"];
+
+const WORDLE_WORD = wordList[Math.floor(Math.random() * wordList.length)].toUpperCase();
+
+console.log(WORDLE_WORD)
+let wordleGuesses = [];
+
+function submitWordleGuess() {
+  const input = document.getElementById('wordle-input');
+  const message = document.getElementById('wordle-message');
+  const board = document.getElementById('wordle-board');
+
+  let guess = input.value.trim().toUpperCase();
+
+  if (guess.length !== 5) {
+    message.textContent = "Guess must be 5 letters!";
+    return;
+  }
+
+  if (wordleGuesses.length >= 6) {
+    message.textContent = "No more guesses! The word was " + WORDLE_WORD;
+    return;
+  }
+
+  const row = document.createElement('div');
+  row.className = 'wordle-row';
+
+  const dictionary_present_word = {};
+  const dictionary_frequency_present_word = {};
+
+  for (let i = 0; i < 5; i++){
+
+    const cell = document.createElement('div');
+    cell.className = 'wordle-cell';
+    cell.textContent = guess[i];
+
+    if (!dictionary_frequency_present_word.hasOwnProperty(WORDLE_WORD[i])) {
+      dictionary_frequency_present_word[WORDLE_WORD[i]] = 1
+    }else{
+      dictionary_frequency_present_word[WORDLE_WORD[i]] += 1
+    }
+
+    // not adding to dictionary_frequency_word when it is correct 
+    if (guess[i] == WORDLE_WORD[i]){
+      dictionary_frequency_present_word[guess[i]] -= 1
+    }
+
+  }
+
+  for (let i = 0; i < 5; i++){
+    if (!dictionary_frequency_present_word.hasOwnProperty(guess[i])){
+      // if not present 
+      console.log("Inside here");
+      dictionary_present_word[guess[i]] = 0
+    }else{
+      dictionary_present_word[guess[i]] = dictionary_frequency_present_word[guess[i]]
+    }
+  }
+
+  // number of words 
+
+  for (let i = 0; i < 5; i++) {
+    const cell = document.createElement('div');
+    cell.className = 'wordle-cell';
+    cell.textContent = guess[i];
+
+    if (guess[i] === WORDLE_WORD[i]) {
+      cell.classList.add('correct');
+
+    } else if (WORDLE_WORD.includes(guess[i])) {
+      if (dictionary_present_word[guess[i]] > 0){
+        cell.classList.add('present');
+        dictionary_present_word[guess[i]] -= 1
+      }else{
+        cell.classList.add('absent');
+      }
+      
+    } else {
+      cell.classList.add('absent');
+    }
+
+    row.appendChild(cell);
+  }
+
+  board.appendChild(row);
+  wordleGuesses.push(guess);
+  input.value = "";
+  message.textContent = "";
+
+  if (guess === WORDLE_WORD) {
+    message.textContent = "🎉 You guessed it!";
+    input.disabled = true;
+  } else if (wordleGuesses.length === 6) {
+    message.textContent = "💀 Game over! The word was " + WORDLE_WORD;
+    input.disabled = true;
+  }
+}
+
+
+function resetWordle() {
+  wordleGuesses = [];
+  document.getElementById('wordle-board').innerHTML = '';
+  document.getElementById('wordle-message').textContent = '';
+  document.getElementById('wordle-input').disabled = false;
+  document.getElementById('wordle-input').value = '';
+}

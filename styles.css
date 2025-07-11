@@ -809,6 +809,98 @@ nav li a:hover {
 }
 
 
+.wordle-board {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 8px;
+}
+
+
+.wordle-row {
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+  gap: 5px;
+  margin: 0 auto;
+}
+
+.wordle-cell {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ccc;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 50px;
+  background-color: white;
+}
+
+.wordle-cell.correct {
+  background-color: #6aaa64; /* green */
+  color: white;
+}
+
+.wordle-cell.present {
+  background-color: #c9b458; /* yellow */
+  color: white;
+}
+
+.wordle-cell.absent {
+  background-color: #787c7e; /* gray */
+  color: white;
+}
+
+#wordle-input {
+  width: 220px;
+  padding: 10px 12px;
+  font-size: 18px;
+  text-transform: uppercase;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-right: 10px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#wordle-input:focus {
+  border-color: #6aaa64;
+  box-shadow: 0 0 5px rgba(106, 170, 100, 0.5);
+}
+
+.wordle-controls button {
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.wordle-controls button:first-of-type {
+  background-color: #ff6b6b; /* Restart - red */
+  color: white;
+}
+
+.wordle-controls button:last-of-type {
+  background-color: #6aaa64; /* Submit - green */
+  color: white;
+}
+
+.wordle-controls button:hover {
+  opacity: 0.9;
+}
+
+#wordle-message {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #333;
+}
+
+
+
 
 /* Category Section */
 .category-class {
