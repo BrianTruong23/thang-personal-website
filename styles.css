@@ -878,12 +878,12 @@ nav li a:hover {
   transition: background-color 0.3s ease;
 }
 
-.wordle-controls button:first-of-type {
+.wordle-controls button:last-of-type {
   background-color: #ff6b6b; /* Restart - red */
   color: white;
 }
 
-.wordle-controls button:last-of-type {
+.wordle-controls button:first-of-type {
   background-color: #6aaa64; /* Submit - green */
   color: white;
 }
