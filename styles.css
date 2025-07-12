@@ -878,14 +878,21 @@ nav li a:hover {
   transition: background-color 0.3s ease;
 }
 
-.wordle-controls button:last-of-type {
-  background-color: #ff6b6b; /* Restart - red */
+.reset-btn-wordle {
+  background-color: #DC3C22; /* Restart - red */
   color: white;
 }
 
-.wordle-controls button:first-of-type {
-  background-color: #6aaa64; /* Submit - green */
+.submit-btn-wordle {
+  background-color: #4A9782; /* Submit - green */
   color: white;
+}
+
+
+.disable-btn-wordle{
+  background-color: #D7D7D7;
+  color: black;
+
 }
 
 .wordle-controls button:hover {
