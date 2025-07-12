@@ -1,4 +1,3 @@
-
 // // Hide all sections
 const sections = document.querySelectorAll("section");
 
@@ -472,9 +471,6 @@ document.addEventListener("DOMContentLoaded", () => {
   updateScoreDisplay();
 });
 
-
-
-
 const wordList = [
   "About", "Alert", "Argue", "Beach",
   "Above", "Alike", "Arise", "Began",
@@ -503,9 +499,16 @@ const wordList = [
   "Bring", "Chase", "Close", "Cycle",
   "Broad", "Cheap", "Coach"];
 
-const WORDLE_WORD = wordList[Math.floor(Math.random() * wordList.length)].toUpperCase();
+function getRandomWord(){
+    var word =  wordList[Math.floor(Math.random() * wordList.length)].toUpperCase();
+    console.log(word);
+    return word;
+}
 
-console.log(WORDLE_WORD)
+var WORDLE_WORD = getRandomWord();
+
+const submit_btn_wordle = document.getElementById("submit-btn-wordle");
+
 let wordleGuesses = [];
 
 function submitWordleGuess() {
@@ -553,7 +556,6 @@ function submitWordleGuess() {
   for (let i = 0; i < 5; i++){
     if (!dictionary_frequency_present_word.hasOwnProperty(guess[i])){
       // if not present 
-      console.log("Inside here");
       dictionary_present_word[guess[i]] = 0
     }else{
       dictionary_present_word[guess[i]] = dictionary_frequency_present_word[guess[i]]
@@ -592,6 +594,9 @@ function submitWordleGuess() {
 
   if (guess === WORDLE_WORD) {
     message.textContent = "🎉 You guessed it!";
+    // disable input and disable submit button
+    submit_btn_wordle.disabled = true;
+    submit_btn_wordle.classList.add("disable-btn-wordle");
     input.disabled = true;
   } else if (wordleGuesses.length === 6) {
     message.textContent = "💀 Game over! The word was " + WORDLE_WORD;
@@ -600,10 +605,18 @@ function submitWordleGuess() {
 }
 
 
+function reset_submit_btn(){
+    submit_btn_wordle.classList.remove("disable-btn-wordle");
+    submit_btn_wordle.disabled = false;
+}
+
 function resetWordle() {
   wordleGuesses = [];
+  WORDLE_WORD = getRandomWord();
   document.getElementById('wordle-board').innerHTML = '';
   document.getElementById('wordle-message').textContent = '';
   document.getElementById('wordle-input').disabled = false;
   document.getElementById('wordle-input').value = '';
+  reset_submit_btn();
+
 }
