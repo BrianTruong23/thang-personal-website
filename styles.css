@@ -851,7 +851,9 @@ nav li a:hover {
 }
 
 #wordle-input {
-  width: 220px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
   padding: 10px 12px;
   font-size: 18px;
   text-transform: uppercase;
@@ -866,6 +868,7 @@ nav li a:hover {
   border-color: #6aaa64;
   box-shadow: 0 0 5px rgba(106, 170, 100, 0.5);
 }
+
 
 .wordle-controls button {
   padding: 10px 16px;
@@ -905,7 +908,6 @@ nav li a:hover {
   margin-top: 10px;
   color: #333;
 }
-
 
 
 
