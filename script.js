@@ -25,8 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // Convert link text to lowercase and construct target ID
         const targetId = this.textContent.toLowerCase() + "-section";
 
-        console.log(targetId)
-
         // Hide all sections
         sections.forEach(section => {
             // console.log(section.textContent.toLowerCase() + "-section");
@@ -501,7 +499,6 @@ const wordList = [
 
 function getRandomWord(){
     var word =  wordList[Math.floor(Math.random() * wordList.length)].toUpperCase();
-    console.log(word);
     return word;
 }
 
