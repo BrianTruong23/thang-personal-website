@@ -299,10 +299,21 @@
                 </div>
 
         
-                <div id = "wordle-section">
-                  <p>Coming soon!</p>
+                <div id="wordle-section" style="display: none;">
+                  <h2>🔡 Wordle Clone</h2>
+                  <div id="wordle-board" class="wordle-board"></div>
+                  <div class="wordle-controls">
+                    <input type="text" id="wordle-input" maxlength="5" placeholder="Enter 5-letter word" />
+    
+                    <button onclick="submitWordleGuess()">Submit</button>
+                    <button onclick="resetWordle()">Restart</button>
+                  </div>
+                  <p id="wordle-message"></p>
 
                 </div>
+
+
+
                 <div id="tile-section">
                   <div class = "category-selection">
                       <p class="category-class">🎯 Choose a Theme:</p>
