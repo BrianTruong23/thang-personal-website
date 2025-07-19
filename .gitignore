@@ -1,1 +1,5 @@
 .vscode/
+backend.py
+requirements.txt
+run.sh
+.DS_Store
