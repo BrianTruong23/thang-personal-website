@@ -79,7 +79,7 @@ nav li a:hover {
   gap: 40px;
   margin: auto;
   text-align: center;
-  background-image: url(portfolio-background.png);
+  background-image: url(images/portfolio-background.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -325,7 +325,6 @@ nav li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2em;
   flex-direction: column;
 }
 
@@ -568,15 +567,33 @@ nav li a:hover {
 }
 
 .experience1 {
-  background-image: url(laits.jpeg);
+  background-image: url(images/laits.jpeg);
 }
 
 .experience2 {
-  background-image: url(ischool.jpg);
+  background-image: url(images/ischool.jpg);
 }
 
 .experience3{
-  background-image: url(startup.jpg);
+  background-image: url(images/startup.jpg);
+}
+
+.experience4 {
+  background-image: url(images/ai_in_medicine.jpg);
+}
+
+.experience ul {
+  list-style-type: disc;
+  padding-left: 40px;
+  text-align: left;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.experience li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 
 .background-section {
@@ -1162,6 +1179,68 @@ footer a:hover {
     font-size: 15px;
   }
 
+/* ---------------------------------------------
+   ✅ Table-like Layout for Products & News
+--------------------------------------------- */
+.table-section {
+  width: 100%;
+  max-width: 800px; /* Increased width */
+  padding: 40px 20px;
+  margin: 0 auto; /* Center the block itself, but align content left */
+  text-align: left !important; /* Force left alignment of text */
+}
+
+.table-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
+  text-transform: lowercase;
+  text-align: left !important;
+}
+
+.table-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr; /* Fixed width for label */
+  gap: 15px 40px;
+  align-items: start; /* Align to top */
+  text-align: left !important;
+}
+
+.table-label {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #000;
+  text-align: left !important;
+}
+
+.table-content {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  text-align: left !important;
+}
+
+.table-content a {
+  color: #d63384;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.table-content a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .table-grid {
+    grid-template-columns: 1fr;
+    gap: 10px 0;
+  }
+  
+  .table-label {
+    margin-top: 15px;
+  }
+}
   cite{
     font-size: 10px;
   }

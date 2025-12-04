@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thang Truong</title>
-  <link rel="icon" type="image/png" href="favicon2.png" />
+  <link rel="icon" type="image/png" href="images/favicon2.png" />
 
   <link rel="stylesheet" href="styles.css"/>
   <link
@@ -115,7 +115,7 @@
 
                       <div class="card">
                         <div class="card-content">
-                          <img src="profile-image.png" alt="Profile" class="profile-pic" />
+                          <img src="images/profile-image.png" alt="Profile" class="profile-pic" />
 
                           <div class = "card-content-text">
                             <h4>Thang Thoi Truong</h4>
@@ -231,29 +231,95 @@
                       
                     </div>
 
+                      <!-- News Section -->
+                    <div id="news-area" class="table-section">
+                      <h2 class="table-title">news</h2>
+                      <div class="table-grid">
+                        <div class="table-label">Aug 2025</div>
+                        <div class="table-content">Started PhD at Auburn University. 🐯</div>
+                        
+                        <div class="table-label">May 2025</div>
+                        <div class="table-content">Graduated from UT Austin! 🎓</div>
+                        
+                        <div class="table-label">May 2025</div>
+                        <div class="table-content">Published paper on Cardiovascular Risks. 📄</div>
+                      </div>
+                    </div>
+
+                       <!-- Products Section -->
+                    <div id="products-area" class="table-section">
+                      <h2 class="table-title">products</h2>
+                      <div class="table-grid">
+                        <div class="table-label">NeonAI</div>
+                        <div class="table-content">Aims to bring light into AI models. <a href="https://neonlightai.vercel.app/" target="_blank">Check it out</a></div>
+                        
+                        <div class="table-label">OfCourt</div>
+                        <div class="table-content">Badminton court booking system. <a href="https://ofcourt-badminton.vercel.app/" target="_blank">Check it out</a></div>
+                        
+                        <div class="table-label">Learn Anything</div>
+                        <div class="table-content">Interactive learning platform. <a href="https://learn-anything-sooty.vercel.app/" target="_blank">Check it out</a></div>
+                      </div>
+                    </div>
+
+                  
+                    </div>
+
+                  </div>
+
+
               </section>
 
 
               <section id="experience-section">
                 <div class="experience-scroll-wrapper">
                   <div class="experience-scroll">
-                    <div class="experience experience1 background-section">
-                      <h2>Software Engineer @ LAITS</h2>
-                      <h4>August 2022 - May 2025</h4>
-                      <p>Implemented full-stack and AI integration for internal tools at UT Austin.</p>
-                    </div>
-              
+                    <!-- 1. NLP iSchool -->
                     <div class="experience experience2 background-section">
-                      <h2>Research Assistant @NLP ischool</h2>
-                      <h4>May 2024 - May 2025</h4>
-                      <p>Worked on pipeline translating data into 28 languages and developed multi-lingual VLM.</p>
+                      <h2>Natural Language Processing iSchool Research Group</h2>
+                      <h4>Austin, TX | May 2024 – May 2025</h4>
+                      <p><strong>NLP Developer</strong> | Python, Bash, SeamlessM4T</p>
+                      <ul>
+                        <li>Architected a multilingual NLP data pipeline translating 89.6GB of parallel corpora into 28 languages using SeamlessM4T</li>
+                        <li>Co-authored PolyverseVLM, a lightweight vision-language model optimized for GPUs using 80M SigLIP and 500M Qwen2</li>
+                        <li>Optimized batch parallelism for model fine-tuning, reducing training time by 40% on limited hardware.</li>
+                      </ul>
                     </div>
 
-                  <div class="experience experience3 background-section">
-                    <h2>Front-end SWE Intern @Claudius Legal intelligence</h2>
-                    <h4>June 2023 - August 2023</h4>
-                    <p>Designed web pages and executed designs into functional prototypes.</p>
-                  </div>
+                    <!-- 2. LAITS -->
+                    <div class="experience experience1 background-section">
+                      <h2>Liberal Arts Instructional Technology Services</h2>
+                      <h4>Austin, TX | Aug 2022 – May 2025</h4>
+                      <p><strong>Junior Software Developer</strong> | Python, R, Laravel PHP, Node JS, Docker, Tableau, WordPress</p>
+                      <ul>
+                        <li>Developed 20+ full-stack web apps and dashboards applying modular codebases and REST API integration</li>
+                        <li>Migrated legacy Drupal systems to Laravel, implementing advanced filtering and user management features</li>
+                        <li>Revamped three WordPress websites with custom plugins and UI/UX upgrades, increasing user engagement by 40%</li>
+                        <li>Implemented PDF viewer for UT Instapoll, supporting 50,000+ users across UT Austin classrooms</li>
+                      </ul>
+                    </div>
+
+                    <!-- 3. AI Health Lab -->
+                    <div class="experience experience4 background-section">
+                      <h2>AI Health Lab <a href="https://aihealth.ischool.utexas.edu/team/about_us.html" style="color: #fff; text-decoration: underline;">[website]</a></h2>
+                      <h4>Austin, TX | Nov 2023 – March 2024</h4>
+                      <p><strong>NLP Research Assistant</strong> | BERTopic, Python, Matplotlib, Google Colab</p>
+                      <ul>
+                        <li>Applied BERTopic with UMAP + HDBSCAN to uncover 20 thematic clusters in a corpus of 12,146 LLM paper abstracts</li>
+                        <li>Validated clustering integrity using 5 comparative techniques (bar chart, dendrogram, heatmap, topic graph, PCA plot)</li>
+                        <li>Conducted a survey of 12 foundational LLM papers, manually labeling to identify 3 previously unreported research themes</li>
+                      </ul>
+                    </div>
+
+                    <!-- 4. Claudius -->
+                    <div class="experience experience3 background-section">
+                      <h2>Claudius Legal Intelligence Inc.</h2>
+                      <h4>Remote | June 2023 – Aug 2023</h4>
+                      <p><strong>Software Engineering Intern</strong> | Python, Django, Figma</p>
+                      <ul>
+                        <li>Developed 4 production-ready web pages in Django, integrating interactive frontends based on Figma designs with Bootstrap</li>
+                        <li>Led UI/UX testing iterations with feedback from legal professionals, improving usability scores by 18% in internal testing</li>
+                      </ul>
+                    </div>
 
                   </div>
               
