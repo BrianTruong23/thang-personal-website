@@ -1079,6 +1079,81 @@ footer a:hover {
 }
 
 
+/* Section wrapper */
+.table-section {
+  margin: 3rem 0;
+}
+
+/* "news" / "products" title */
+.table-title {
+  font-size: 2.4rem;
+  font-weight: 400;
+  text-transform: lowercase;
+  margin-bottom: 1.8rem;
+}
+
+/* 2-column layout: date / title on left, text on right */
+.info-table-grid {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  column-gap: 3rem;
+  row-gap: 1.8rem;
+  max-width: 500px;   /* or whatever width you like */
+  margin: 0 auto;     /* centers the grid horizontally */
+}
+
+
+/* Left column: date or product name */
+.table-label {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #222;
+  white-space: nowrap;
+}
+
+/* Right column: text */
+.table-content {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: #333;
+  text-align: left;
+}
+
+/* Links in content (purple like screenshot) */
+.table-content a {
+  color: #b012c5;          /* tweak to match your brand */
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.table-content a:hover {
+  text-decoration: underline;
+}
+
+/* Optional: add a little extra vertical space between logical rows
+   if you reuse .info-table-grid elsewhere with many entries */
+.info-table-grid > .table-label:nth-child(n + 3) {
+  margin-top: 0.4rem;
+}
+
+/* ------------ Mobile (stacked) ------------ */
+
+@media (max-width: 640px) {
+  .table-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-table-grid {
+    grid-template-columns: 1fr;
+    row-gap: 1.2rem;
+  }
+
+  .table-label {
+    white-space: normal;
+    margin-bottom: 0.1rem;
+  }
+}
 
 
 
@@ -1179,83 +1254,4 @@ footer a:hover {
     font-size: 15px;
   }
 
-/* ---------------------------------------------
-   ✅ Table-like Layout for Products & News
---------------------------------------------- */
-.table-section {
-  width: 100%;
-  max-width: 800px; /* Increased width */
-  padding: 40px 20px;
-  margin: 0 auto; /* Center the block itself, but align content left */
-  text-align: left !important; /* Force left alignment of text */
-}
-
-.table-title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 20px;
-  text-transform: lowercase;
-  text-align: left !important;
-}
-
-.table-grid {
-  display: grid;
-  grid-template-columns: 140px 1fr; /* Fixed width for label */
-  gap: 15px 40px;
-  align-items: start; /* Align to top */
-  text-align: left !important;
-}
-
-.table-label {
-  font-weight: 700;
-  font-size: 1rem;
-  color: #000;
-  text-align: left !important;
-}
-
-.table-content {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.5;
-  text-align: left !important;
-}
-
-.table-content a {
-  color: #d63384;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.table-content a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-  .table-grid {
-    grid-template-columns: 1fr;
-    gap: 10px 0;
-  }
-  
-  .table-label {
-    margin-top: 15px;
-  }
-}
-  cite{
-    font-size: 10px;
-  }
-
-
-  #publication-section{
-    padding:20px 40px 10px;
-  }
-
-
-  footer {
-      padding: 10px 0;
-  }
-
-  footer p {
-      font-size: 0.8em;
-  }
 }
