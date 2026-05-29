@@ -315,33 +315,33 @@ nav ul li a:hover, nav ul li a.active {
 }
 .sc-card:hover { transform: translateY(-8px); }
 
-/* NeonAI — violet/indigo */
+/* NeonAI — #1591DC ocean blue */
 .sc-card-amber {
-  background: linear-gradient(150deg, #160c2e 0%, #0e0820 55%, #060412 100%);
-  border: 1px solid rgba(139,92,246,0.20);
+  background: linear-gradient(150deg, #071e36 0%, #041528 55%, #020c1a 100%);
+  border: 1px solid rgba(21,145,220,0.26);
 }
-.sc-card-amber:hover { box-shadow: 0 28px 60px rgba(139,92,246,0.18); }
+.sc-card-amber:hover { box-shadow: 0 28px 60px rgba(21,145,220,0.20); }
 
-/* OfCourt — warm cognac/amber */
+/* OfCourt — #007979 deep teal */
 .sc-card-orange {
-  background: linear-gradient(150deg, #2a1600 0%, #1c0e00 55%, #0e0700 100%);
-  border: 1px solid rgba(251,146,60,0.18);
+  background: linear-gradient(150deg, #002828 0%, #001c1c 55%, #000e0e 100%);
+  border: 1px solid rgba(0,121,121,0.30);
 }
-.sc-card-orange:hover { box-shadow: 0 28px 60px rgba(251,146,60,0.15); }
+.sc-card-orange:hover { box-shadow: 0 28px 60px rgba(0,121,121,0.20); }
 
-/* Learn Anything — deep emerald */
+/* Learn Anything — #111844 midnight navy */
 .sc-card-golden {
-  background: linear-gradient(150deg, #002018 0%, #001510 55%, #000a08 100%);
-  border: 1px solid rgba(16,185,129,0.18);
+  background: linear-gradient(150deg, #111844 0%, #0c1234 55%, #07091e 100%);
+  border: 1px solid rgba(49,66,160,0.35);
 }
-.sc-card-golden:hover { box-shadow: 0 28px 60px rgba(16,185,129,0.15); }
+.sc-card-golden:hover { box-shadow: 0 28px 60px rgba(49,66,160,0.20); }
 
-/* PageGuide — rich navy/indigo */
+/* PageGuide — #C13383 vivid magenta */
 .sc-card-blue {
-  background: linear-gradient(150deg, #060f24 0%, #04091a 55%, #020510 100%);
-  border: 1px solid rgba(99,132,255,0.18);
+  background: linear-gradient(150deg, #2e0a22 0%, #1e0616 55%, #0e030a 100%);
+  border: 1px solid rgba(193,51,131,0.26);
 }
-.sc-card-blue:hover { box-shadow: 0 28px 60px rgba(99,132,255,0.15); }
+.sc-card-blue:hover { box-shadow: 0 28px 60px rgba(193,51,131,0.20); }
 
 /* Card internals */
 .sc-top-row {
@@ -732,33 +732,33 @@ code { font-family: 'SF Mono','Fira Code','Consolas',monospace; font-size: 0.88r
 /* ─────────────────────────────────────────────────
    SHOWCASE V2 — LIGHT MODE OVERRIDES
 ───────────────────────────────────────────────── */
-/* NeonAI — soft lavender */
+/* NeonAI — light #1591DC sky */
 [data-theme="light"] .sc-card-amber {
-  background: linear-gradient(150deg, #f5f0ff 0%, #e9d8fd 60%, #d8bfff 100%);
-  border-color: rgba(139,92,246,0.22);
+  background: linear-gradient(150deg, #e8f6fd 0%, #b3d9f7 60%, #7cbef0 100%);
+  border-color: rgba(21,145,220,0.24);
 }
-[data-theme="light"] .sc-card-amber:hover { box-shadow: 0 20px 48px rgba(139,92,246,0.16); }
+[data-theme="light"] .sc-card-amber:hover { box-shadow: 0 20px 48px rgba(21,145,220,0.16); }
 
-/* OfCourt — warm peach/amber */
+/* OfCourt — light #007979 seafoam */
 [data-theme="light"] .sc-card-orange {
-  background: linear-gradient(150deg, #fff4e6 0%, #ffd9a8 60%, #ffb868 100%);
-  border-color: rgba(251,146,60,0.24);
+  background: linear-gradient(150deg, #e0f5f5 0%, #99e0e0 60%, #55c8c8 100%);
+  border-color: rgba(0,121,121,0.26);
 }
-[data-theme="light"] .sc-card-orange:hover { box-shadow: 0 20px 48px rgba(251,146,60,0.16); }
+[data-theme="light"] .sc-card-orange:hover { box-shadow: 0 20px 48px rgba(0,121,121,0.16); }
 
-/* Learn Anything — soft mint */
+/* Learn Anything — light #111844 periwinkle */
 [data-theme="light"] .sc-card-golden {
-  background: linear-gradient(150deg, #ecfdf5 0%, #a7f3d0 60%, #6ee7b7 100%);
-  border-color: rgba(16,185,129,0.22);
+  background: linear-gradient(150deg, #eef0fb 0%, #c0c8f4 60%, #8898e8 100%);
+  border-color: rgba(49,66,160,0.22);
 }
-[data-theme="light"] .sc-card-golden:hover { box-shadow: 0 20px 48px rgba(16,185,129,0.14); }
+[data-theme="light"] .sc-card-golden:hover { box-shadow: 0 20px 48px rgba(49,66,160,0.14); }
 
-/* PageGuide — sky blue */
+/* PageGuide — light #C13383 rose */
 [data-theme="light"] .sc-card-blue {
-  background: linear-gradient(150deg, #eff6ff 0%, #bfdbfe 60%, #93c5fd 100%);
-  border-color: rgba(59,130,246,0.22);
+  background: linear-gradient(150deg, #fde8f4 0%, #f0a8d8 60%, #e070c0 100%);
+  border-color: rgba(193,51,131,0.22);
 }
-[data-theme="light"] .sc-card-blue:hover { box-shadow: 0 20px 48px rgba(59,130,246,0.14); }
+[data-theme="light"] .sc-card-blue:hover { box-shadow: 0 20px 48px rgba(193,51,131,0.14); }
 
 [data-theme="light"] .sc-name    { color: #111111; }
 [data-theme="light"] .sc-date    { color: rgba(17,17,17,0.38); }
