@@ -300,127 +300,136 @@ nav ul li a:hover, nav ul li a.active {
 .showcase-track::-webkit-scrollbar { display: none; }
 .showcase-track.grabbing { cursor: grabbing; user-select: none; }
 
-/* ── Cards ── */
+/* ── Per-card accent system (light mode defaults) ── */
+.sc-pageguide     { --sc-accent: #EA6C0A; --sc-border: #FDBA74; --sc-bg: #FFF7ED; --sc-shadow: rgba(234,108,10,0.13); }
+.sc-neonai        { --sc-accent: #4338CA; --sc-border: #A5B4FC; --sc-bg: #EEF2FF; --sc-shadow: rgba(67,56,202,0.13); }
+.sc-learnanything { --sc-accent: #1D4ED8; --sc-border: #93C5FD; --sc-bg: #EFF6FF; --sc-shadow: rgba(29,78,216,0.13); }
+.sc-ofcourt       { --sc-accent: #15803D; --sc-border: #86EFAC; --sc-bg: #F0FDF4; --sc-shadow: rgba(21,128,61,0.13); }
+
+/* Dark mode — deep tinted backgrounds, same accent hues */
+[data-theme="dark"] .sc-pageguide     { --sc-bg: #1a1108; --sc-border: rgba(234,108,10,0.22); }
+[data-theme="dark"] .sc-neonai        { --sc-bg: #0b0c1c; --sc-border: rgba(67,56,202,0.22); }
+[data-theme="dark"] .sc-learnanything { --sc-bg: #080d1c; --sc-border: rgba(29,78,216,0.22); }
+[data-theme="dark"] .sc-ofcourt       { --sc-bg: #060f0a; --sc-border: rgba(21,128,61,0.22); }
+
+/* Card base */
 .sc-card {
   flex-shrink: 0;
   width: 340px;
-  min-height: 460px;
-  border-radius: 18px;
+  min-height: 480px;
+  border-radius: 16px;
   padding: 1.8rem;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   scroll-snap-align: start;
-  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease;
+  background: var(--sc-bg);
+  border: 1px solid var(--sc-border);
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease;
 }
-.sc-card:hover { transform: translateY(-8px); }
-
-/* NeonAI — warm charcoal with amber undertone */
-.sc-card-amber {
-  background: linear-gradient(150deg, #1c1810 0%, #131108 55%, #0a0b06 100%);
-  border: 1px solid rgba(245,158,11,0.18);
+.sc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px var(--sc-shadow);
 }
-.sc-card-amber:hover { box-shadow: 0 28px 60px rgba(245,158,11,0.12); }
 
-/* OfCourt — deep slate with cool undertone */
-.sc-card-orange {
-  background: linear-gradient(150deg, #111820 0%, #0b1018 55%, #060a10 100%);
-  border: 1px solid rgba(148,196,242,0.14);
-}
-.sc-card-orange:hover { box-shadow: 0 28px 60px rgba(148,196,242,0.10); }
-
-/* Learn Anything — dark olive-charcoal */
-.sc-card-golden {
-  background: linear-gradient(150deg, #141a10 0%, #0e1209 55%, #080a05 100%);
-  border: 1px solid rgba(134,197,120,0.16);
-}
-.sc-card-golden:hover { box-shadow: 0 28px 60px rgba(134,197,120,0.10); }
-
-/* PageGuide — dark warm with orange-amber hint */
-.sc-card-blue {
-  background: linear-gradient(150deg, #1c1408 0%, #130e05 55%, #0a0902 100%);
-  border: 1px solid rgba(255,107,53,0.20);
-}
-.sc-card-blue:hover { box-shadow: 0 28px 60px rgba(255,107,53,0.12); }
-
-/* Card internals */
-.sc-top-row {
+/* Card top: badges left, number right */
+.sc-card-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
+  gap: 0.5rem;
 }
-.sc-num {
-  font-size: 0.7rem;
+
+.sc-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.sc-badge {
+  font-size: 0.58rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--amber);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 100px;
+  background: color-mix(in srgb, var(--sc-accent) 12%, transparent);
+  color: var(--sc-accent);
+  white-space: nowrap;
 }
-.sc-date {
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  color: rgba(255,255,255,0.30);
+
+.sc-num {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  opacity: 0.45;
+  flex-shrink: 0;
+  padding-top: 2px;
 }
 
 .sc-emoji {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.07);
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--sc-accent) 10%, transparent);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
-  margin-bottom: 1.4rem;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
   flex-shrink: 0;
 }
 
 .sc-name {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text);
   line-height: 1.05;
   letter-spacing: -0.02em;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
 .sc-role {
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--sc-accent);
   margin-bottom: 0.9rem;
+  opacity: 0.85;
 }
 
 .sc-desc {
-  font-size: 0.86rem;
+  font-size: 0.875rem;
   line-height: 1.72;
-  color: rgba(255,255,255,0.52);
+  color: var(--muted);
   flex: 1;
-  margin-bottom: 1.5rem;
+}
+
+.sc-card-footer {
+  padding-top: 1.5rem;
+  margin-top: auto;
 }
 
 .sc-pill {
   display: inline-flex;
   align-items: center;
-  background: rgba(255,255,255,0.10);
-  color: rgba(255,255,255,0.82);
-  font-size: 0.76rem;
+  gap: 0.3rem;
+  background: var(--sc-accent);
+  color: #ffffff;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.03em;
-  padding: 9px 18px;
+  letter-spacing: 0.02em;
+  padding: 10px 20px;
   border-radius: 100px;
-  border: 1px solid rgba(255,255,255,0.14);
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
-  align-self: flex-start;
+  transition: opacity 0.2s, transform 0.2s;
 }
 .sc-card:hover .sc-pill {
-  background: var(--amber);
-  border-color: var(--amber);
-  color: #111;
+  opacity: 0.88;
+  transform: translateX(2px);
 }
 
 /* News */
@@ -725,51 +734,7 @@ code { font-family: 'SF Mono','Fira Code','Consolas',monospace; font-size: 0.88r
    GOAT LOGO — SVG has its own shape, no overrides needed
 ───────────────────────────────────────────────── */
 
-/* ─────────────────────────────────────────────────
-   SHOWCASE V2 — LIGHT MODE OVERRIDES
-───────────────────────────────────────────────── */
-/* NeonAI — warm cream */
-[data-theme="light"] .sc-card-amber {
-  background: linear-gradient(150deg, #fdf8f0 0%, #f5ead8 60%, #ead5b8 100%);
-  border-color: rgba(245,158,11,0.20);
-}
-[data-theme="light"] .sc-card-amber:hover { box-shadow: 0 20px 48px rgba(245,158,11,0.14); }
-
-/* OfCourt — cool white-blue */
-[data-theme="light"] .sc-card-orange {
-  background: linear-gradient(150deg, #f4f7fb 0%, #dde8f5 60%, #c8d8ee 100%);
-  border-color: rgba(100,148,210,0.22);
-}
-[data-theme="light"] .sc-card-orange:hover { box-shadow: 0 20px 48px rgba(100,148,210,0.14); }
-
-/* Learn Anything — soft sage */
-[data-theme="light"] .sc-card-golden {
-  background: linear-gradient(150deg, #f4f8f2 0%, #ddeeda 60%, #c6e0c2 100%);
-  border-color: rgba(100,168,90,0.22);
-}
-[data-theme="light"] .sc-card-golden:hover { box-shadow: 0 20px 48px rgba(100,168,90,0.14); }
-
-/* PageGuide — warm ivory-orange */
-[data-theme="light"] .sc-card-blue {
-  background: linear-gradient(150deg, #fdf5ee 0%, #f5e0cc 60%, #eacaaa 100%);
-  border-color: rgba(255,107,53,0.20);
-}
-[data-theme="light"] .sc-card-blue:hover { box-shadow: 0 20px 48px rgba(255,107,53,0.12); }
-
-[data-theme="light"] .sc-name    { color: #111111; }
-[data-theme="light"] .sc-date    { color: rgba(17,17,17,0.38); }
-[data-theme="light"] .sc-emoji   { background: rgba(0,0,0,0.06); }
-[data-theme="light"] .sc-desc    { color: rgba(17,17,17,0.58); }
-[data-theme="light"] .sc-pill {
-  background: rgba(0,0,0,0.07);
-  color: #111111;
-  border-color: rgba(0,0,0,0.13);
-}
-[data-theme="light"] .sc-card:hover .sc-pill {
-  background: var(--amber);
-  color: #111;
-  border-color: var(--amber);
-}
+/* Colors now handled per-card via CSS custom properties — no overrides needed */
 
 /* ─────────────────────────────────────────────────
    RESPONSIVE — 1024px
