@@ -83,17 +83,20 @@ document.addEventListener("DOMContentLoaded", () => {
     p.style.transform = `rotate(${rot}deg) translateY(16px) scale(0.96)`;
   });
 
+  const staggerDelays = [0, 80, 160, 40, 120, 200];
+
   hero.addEventListener("mouseenter", () => {
-    pics.forEach(p => {
-      const rot = parseFloat(p.dataset.rot || 0);
-      p.style.transition = "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)";
-      p.style.transform = `rotate(${rot}deg) translate(0,0) scale(1)`;
+    pics.forEach((p, i) => {
+      const rot   = parseFloat(p.dataset.rot || 0);
+      const delay = staggerDelays[i] || 0;
+      p.style.transition = `transform 1s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`;
+      p.style.transform  = `rotate(${rot}deg) translate(0,0) scale(1)`;
     });
   });
 
   hero.addEventListener("mousemove", e => {
     const rect = hero.getBoundingClientRect();
-    const mx   = (e.clientX - rect.left) / rect.width  - 0.5; // -0.5 … 0.5
+    const mx   = (e.clientX - rect.left) / rect.width  - 0.5;
     const my   = (e.clientY - rect.top)  / rect.height - 0.5;
 
     pics.forEach(p => {
@@ -101,15 +104,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const speed = parseFloat(p.dataset.speed || 1);
       const tx    = mx * 40 * speed;
       const ty    = my * 26 * speed;
-      p.style.transition = "transform 0.28s cubic-bezier(0.22, 1, 0.36, 1)";
+      p.style.transition = "transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)";
       p.style.transform  = `rotate(${rot}deg) translate(${tx}px, ${ty}px) scale(1)`;
     });
   });
 
   hero.addEventListener("mouseleave", () => {
-    pics.forEach(p => {
-      const rot = parseFloat(p.dataset.rot || 0);
-      p.style.transition = "transform 0.9s cubic-bezier(0.22, 1, 0.36, 1)";
+    pics.forEach((p, i) => {
+      const rot   = parseFloat(p.dataset.rot || 0);
+      const delay = staggerDelays[i] || 0;
+      p.style.transition = `transform 1s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`;
       p.style.transform  = `rotate(${rot}deg) translate(0,0) scale(0.98)`;
     });
   });
