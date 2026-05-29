@@ -151,22 +151,9 @@ nav ul li a:hover, nav ul li a.active {
   display: block;
 }
 
-/* Row-by-row cascade: top → middle (500ms) → bottom (1000ms) */
+/* Opacity/filter cascade is driven entirely by JS to avoid CSS-hover timing conflicts */
 @media (hover:hover) and (pointer:fine) {
-  .hero-block:hover .hero-polaroid,
   .hero-block:focus-within .hero-polaroid { opacity: 1; filter: blur(0); }
-
-  /* Top row: selfie (child 1) + beach (child 4) */
-  .hero-block:hover .hero-polaroid:nth-child(1),
-  .hero-block:hover .hero-polaroid:nth-child(4) { transition-delay: 0ms; }
-
-  /* Middle row: grad-2 (child 2) + vision-pro (child 5) */
-  .hero-block:hover .hero-polaroid:nth-child(2),
-  .hero-block:hover .hero-polaroid:nth-child(5) { transition-delay: 500ms; }
-
-  /* Bottom row: hackathon (child 3) + coolboy (child 6) */
-  .hero-block:hover .hero-polaroid:nth-child(3),
-  .hero-block:hover .hero-polaroid:nth-child(6) { transition-delay: 1000ms; }
 }
 
 /* Content sits above polaroids */
@@ -327,33 +314,33 @@ nav ul li a:hover, nav ul li a.active {
 }
 .sc-card:hover { transform: translateY(-8px); }
 
-/* NeonAI — #1591DC ocean blue */
+/* NeonAI — warm charcoal with amber undertone */
 .sc-card-amber {
-  background: linear-gradient(150deg, #071e36 0%, #041528 55%, #020c1a 100%);
-  border: 1px solid rgba(21,145,220,0.26);
+  background: linear-gradient(150deg, #1c1810 0%, #131108 55%, #0a0b06 100%);
+  border: 1px solid rgba(245,158,11,0.18);
 }
-.sc-card-amber:hover { box-shadow: 0 28px 60px rgba(21,145,220,0.20); }
+.sc-card-amber:hover { box-shadow: 0 28px 60px rgba(245,158,11,0.12); }
 
-/* OfCourt — #007979 deep teal */
+/* OfCourt — deep slate with cool undertone */
 .sc-card-orange {
-  background: linear-gradient(150deg, #002828 0%, #001c1c 55%, #000e0e 100%);
-  border: 1px solid rgba(0,121,121,0.30);
+  background: linear-gradient(150deg, #111820 0%, #0b1018 55%, #060a10 100%);
+  border: 1px solid rgba(148,196,242,0.14);
 }
-.sc-card-orange:hover { box-shadow: 0 28px 60px rgba(0,121,121,0.20); }
+.sc-card-orange:hover { box-shadow: 0 28px 60px rgba(148,196,242,0.10); }
 
-/* Learn Anything — #111844 midnight navy */
+/* Learn Anything — dark olive-charcoal */
 .sc-card-golden {
-  background: linear-gradient(150deg, #111844 0%, #0c1234 55%, #07091e 100%);
-  border: 1px solid rgba(49,66,160,0.35);
+  background: linear-gradient(150deg, #141a10 0%, #0e1209 55%, #080a05 100%);
+  border: 1px solid rgba(134,197,120,0.16);
 }
-.sc-card-golden:hover { box-shadow: 0 28px 60px rgba(49,66,160,0.20); }
+.sc-card-golden:hover { box-shadow: 0 28px 60px rgba(134,197,120,0.10); }
 
-/* PageGuide — #C13383 vivid magenta */
+/* PageGuide — dark warm with orange-amber hint */
 .sc-card-blue {
-  background: linear-gradient(150deg, #2e0a22 0%, #1e0616 55%, #0e030a 100%);
-  border: 1px solid rgba(193,51,131,0.26);
+  background: linear-gradient(150deg, #1c1408 0%, #130e05 55%, #0a0902 100%);
+  border: 1px solid rgba(255,107,53,0.20);
 }
-.sc-card-blue:hover { box-shadow: 0 28px 60px rgba(193,51,131,0.20); }
+.sc-card-blue:hover { box-shadow: 0 28px 60px rgba(255,107,53,0.12); }
 
 /* Card internals */
 .sc-top-row {
@@ -740,33 +727,33 @@ code { font-family: 'SF Mono','Fira Code','Consolas',monospace; font-size: 0.88r
 /* ─────────────────────────────────────────────────
    SHOWCASE V2 — LIGHT MODE OVERRIDES
 ───────────────────────────────────────────────── */
-/* NeonAI — light #1591DC sky */
+/* NeonAI — warm cream */
 [data-theme="light"] .sc-card-amber {
-  background: linear-gradient(150deg, #e8f6fd 0%, #b3d9f7 60%, #7cbef0 100%);
-  border-color: rgba(21,145,220,0.24);
+  background: linear-gradient(150deg, #fdf8f0 0%, #f5ead8 60%, #ead5b8 100%);
+  border-color: rgba(245,158,11,0.20);
 }
-[data-theme="light"] .sc-card-amber:hover { box-shadow: 0 20px 48px rgba(21,145,220,0.16); }
+[data-theme="light"] .sc-card-amber:hover { box-shadow: 0 20px 48px rgba(245,158,11,0.14); }
 
-/* OfCourt — light #007979 seafoam */
+/* OfCourt — cool white-blue */
 [data-theme="light"] .sc-card-orange {
-  background: linear-gradient(150deg, #e0f5f5 0%, #99e0e0 60%, #55c8c8 100%);
-  border-color: rgba(0,121,121,0.26);
+  background: linear-gradient(150deg, #f4f7fb 0%, #dde8f5 60%, #c8d8ee 100%);
+  border-color: rgba(100,148,210,0.22);
 }
-[data-theme="light"] .sc-card-orange:hover { box-shadow: 0 20px 48px rgba(0,121,121,0.16); }
+[data-theme="light"] .sc-card-orange:hover { box-shadow: 0 20px 48px rgba(100,148,210,0.14); }
 
-/* Learn Anything — light #111844 periwinkle */
+/* Learn Anything — soft sage */
 [data-theme="light"] .sc-card-golden {
-  background: linear-gradient(150deg, #eef0fb 0%, #c0c8f4 60%, #8898e8 100%);
-  border-color: rgba(49,66,160,0.22);
+  background: linear-gradient(150deg, #f4f8f2 0%, #ddeeda 60%, #c6e0c2 100%);
+  border-color: rgba(100,168,90,0.22);
 }
-[data-theme="light"] .sc-card-golden:hover { box-shadow: 0 20px 48px rgba(49,66,160,0.14); }
+[data-theme="light"] .sc-card-golden:hover { box-shadow: 0 20px 48px rgba(100,168,90,0.14); }
 
-/* PageGuide — light #C13383 rose */
+/* PageGuide — warm ivory-orange */
 [data-theme="light"] .sc-card-blue {
-  background: linear-gradient(150deg, #fde8f4 0%, #f0a8d8 60%, #e070c0 100%);
-  border-color: rgba(193,51,131,0.22);
+  background: linear-gradient(150deg, #fdf5ee 0%, #f5e0cc 60%, #eacaaa 100%);
+  border-color: rgba(255,107,53,0.20);
 }
-[data-theme="light"] .sc-card-blue:hover { box-shadow: 0 20px 48px rgba(193,51,131,0.14); }
+[data-theme="light"] .sc-card-blue:hover { box-shadow: 0 20px 48px rgba(255,107,53,0.12); }
 
 [data-theme="light"] .sc-name    { color: #111111; }
 [data-theme="light"] .sc-date    { color: rgba(17,17,17,0.38); }

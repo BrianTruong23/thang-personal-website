@@ -97,6 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
     pics.forEach((p, i) => {
       const rot = parseFloat(p.dataset.rot || 0);
       p.style.transition = makeTransition(enterDelays[i] || 0);
+      p.style.opacity    = "1";
+      p.style.filter     = "blur(0px)";
       p.style.transform  = `rotate(${rot}deg) translate(0,0) scale(1)`;
     });
   });
@@ -108,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     pics.forEach(p => {
       const rot   = parseFloat(p.dataset.rot   || 0);
       const speed = parseFloat(p.dataset.speed || 1);
+      // Only transition transform during parallax — opacity/filter already at target
       p.style.transition = "transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)";
       p.style.transform  = `rotate(${rot}deg) translate(${mx * 40 * speed}px, ${my * 26 * speed}px) scale(1)`;
     });
@@ -117,6 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
     pics.forEach((p, i) => {
       const rot = parseFloat(p.dataset.rot || 0);
       p.style.transition = makeTransition(leaveDelays[i] || 0);
+      p.style.opacity    = "0";
+      p.style.filter     = "blur(8px)";
       p.style.transform  = `rotate(${rot}deg) translate(0,0) scale(0.98)`;
     });
   });
