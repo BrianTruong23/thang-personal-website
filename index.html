@@ -26,435 +26,481 @@
 
   <!-- ── HEADER ── -->
   <header id="site-header">
-    <a href="#" class="site-logo" id="home-logo">BT</a>
-    <div id="nav-bar">
-      <nav>
-        <ul>
-          <li><a href="#" class="active" data-target="home-section">About</a></li>
-          <li><a href="#" data-target="experience-section">Work</a></li>
-          <li><a href="#" data-target="publication-section">Research</a></li>
-          <li><a href="#" data-target="play-section">Play</a></li>
-          <li><a href="#" data-target="contact-section">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <a href="#hero" class="site-logo">BT</a>
+    <nav>
+      <ul>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#play" class="nav-link">Play</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
       <i class="fa-solid fa-sun" id="theme-icon"></i>
     </button>
   </header>
 
-  <div class="container">
-    <div class="inside-container">
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <div id="hero" class="hero-block">
 
-      <!-- ═══════════════════════════════════════
-           HOME SECTION
-      ═══════════════════════════════════════ -->
-      <section id="home-section" class="home-section">
+    <!-- Polaroid photos — visible always, parallax on mouse move -->
+    <div class="hero-polaroids" aria-hidden="true">
+      <div class="hero-polaroid" data-rot="-9"  data-speed="0.9" style="left:-0.5%;top:8%">
+        <img src="images/Unknown-3.jpg" alt="" />
+      </div>
+      <div class="hero-polaroid" data-rot="6"   data-speed="1.2" style="left:6%;top:42%">
+        <img src="images/Unknown-4.jpg" alt="" />
+      </div>
+      <div class="hero-polaroid" data-rot="-4"  data-speed="0.7" style="left:-1%;top:66%">
+        <img src="images/Unknown-5.jpg" alt="" />
+      </div>
+      <div class="hero-polaroid" data-rot="11"  data-speed="1.0" style="right:2%;top:6%">
+        <img src="images/Unknown-8.jpg" alt="" />
+      </div>
+      <div class="hero-polaroid" data-rot="-7"  data-speed="1.3" style="right:7%;top:42%">
+        <img src="images/Unknown-9.jpg" alt="" />
+      </div>
+      <div class="hero-polaroid" data-rot="5"   data-speed="0.8" style="right:1%;top:68%">
+        <img src="images/Unknown-10.jpg" alt="" />
+      </div>
+    </div>
 
-        <!-- HERO -->
-        <div id="section1" class="hero-block">
-          <div class="section-eyebrow">
-            <span class="eyebrow-num">01</span>
-            <span class="eyebrow-slash">/</span>
-            Index
-          </div>
-          <h1 class="hero-headline">
-            To build <em>intelligent</em><br>
-            systems &amp; make<br>
-            technology human.
-          </h1>
-          <p class="hero-meta">Hi, I'm Thang (Brian). I am <span id="typewriter"></span></p>
-          <div class="button-container">
-            <a href="resume/ThangTruongResume.pdf" download>
-              <button id="resume">Resume <i class="fa-solid fa-circle-down"></i></button>
-            </a>
-            <button id="philosophy">Philosophy ↗</button>
-          </div>
-          <div class="scroll-button">
-            <p class="scroll-text">Scroll to explore</p>
-            <p class="scroll-icon">></p>
-          </div>
-        </div>
+    <!-- Main content -->
+    <div class="hero-content">
+      <div class="section-eyebrow">
+        <span class="eyebrow-num">01</span>
+        <span class="eyebrow-slash">/</span>
+        Index
+      </div>
+      <h1 class="hero-headline">
+        To build <em>intelligent</em><br>
+        systems &amp; make<br>
+        technology human.
+      </h1>
+      <p class="hero-meta">Hi, I'm Thang (Brian). I am <span id="typewriter"></span></p>
+      <div class="button-container">
+        <a href="resume/ThangTruongResume.pdf" download>
+          <button id="resume">Resume <i class="fa-solid fa-circle-down"></i></button>
+        </a>
+        <button id="philosophy">Philosophy ↗</button>
+      </div>
+    </div>
 
-        <!-- ABOUT -->
-        <div id="section2" class="about-block">
-          <div class="section-rule"></div>
-          <div class="about-inner">
-            <img src="images/headshot.jpg" alt="Brian Truong" class="profile-pic" />
-            <div class="about-text">
-              <h2 class="about-name">Thang Thoi Truong</h2>
-              <p class="about-role">Software Engineer · AI Researcher · PhD Student</p>
-              <div class="icons">
-                <a href="https://www.linkedin.com/in/truongthoithang/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/BrianTruong23" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="mailto:truongthoithang@utexas.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://scholar.google.com/citations?user=edMgu7oAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-              </div>
-              <p>
-                Four years at UT Austin sharpened my craft across full-stack engineering, data visualization, and NLP research. I completed my honors thesis under
-                <a href="https://abhijitmishra.github.io/" target="_blank" class="inline-link">Professor Mishra</a>
-                on multilingual language models, and shipped real-world AI tools as part of UT Austin's Liberal Arts Technology team.
-              </p>
-              <p>
-                I'm now finishing my first year of a PhD at Auburn University, advised by
-                <a href="https://anhnguyen.me/research/" target="_blank" class="inline-link">Professor Anh Totti Nguyen ↗</a>.
-                My research sits at the intersection of <strong>explainable AI</strong>, visual intelligence, and human-centered systems — building models that don't just perform well, but can show <em>why</em> they do. My product
-                <a href="https://neonlightai.vercel.app/" target="_blank" class="inline-link">NeonAI ↗</a> puts that philosophy into practice.
-              </p>
-              <p>
-                Outside the lab, you'll find me at the
-                <span class="highlight" id="open-modal-cinema">cinema ↗</span>, on the tennis court, grinding Leetcode, or at the gym.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- EXPERIENCE PREVIEW — Felix Lee style photo cards -->
-        <div class="about-exp-preview">
-          <h3 class="table-title">Experience</h3>
-          <div class="exp-preview-grid">
-
-            <div class="exp-preview-card" style="background-image:url(images/ischool.jpg)">
-              <div class="epc-overlay">
-                <span class="epc-tag">NLP · Research</span>
-                <h4>NLP iSchool Research Group</h4>
-                <p>NLP Developer · UT Austin · 2024–2025</p>
-              </div>
-            </div>
-
-            <div class="exp-preview-card" style="background-image:url(images/laits.jpeg)">
-              <div class="epc-overlay">
-                <span class="epc-tag">Full-Stack · Dev</span>
-                <h4>Liberal Arts IT Services</h4>
-                <p>Junior SWE · UT Austin · 2022–2025</p>
-              </div>
-            </div>
-
-            <div class="exp-preview-card" style="background-image:url(images/ai_in_medicine.jpg)">
-              <div class="epc-overlay">
-                <span class="epc-tag">NLP · Healthcare</span>
-                <h4>AI Health Lab</h4>
-                <p>NLP Research Assistant · 2023–2024</p>
-              </div>
-            </div>
-
-            <div class="exp-preview-card" style="background-image:url(images/startup.jpg)">
-              <div class="epc-overlay">
-                <span class="epc-tag">Startup · Intern</span>
-                <h4>Claudius Legal AI</h4>
-                <p>SWE Intern · Remote · Summer 2023</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- PRODUCTS — Felix Lee style showcase cards -->
-        <div id="products-area" class="showcase-section">
-          <h3 class="table-title">Selected Work</h3>
-          <div class="showcase-row">
-
-            <a href="https://neonlightai.vercel.app/" target="_blank" class="showcase-card showcase-1">
-              <div class="showcase-inner">
-                <span class="showcase-num">01</span>
-                <div class="showcase-bottom">
-                  <h3>NeonAI</h3>
-                  <p>Transparency &amp; interpretability in AI model reasoning.</p>
-                  <span class="showcase-cta">Visit ↗</span>
-                </div>
-              </div>
-            </a>
-
-            <a href="https://ofcourt-badminton.vercel.app/" target="_blank" class="showcase-card showcase-2">
-              <div class="showcase-inner">
-                <span class="showcase-num">02</span>
-                <div class="showcase-bottom">
-                  <h3>OfCourt</h3>
-                  <p>Badminton e-commerce platform for enthusiasts.</p>
-                  <span class="showcase-cta">Visit ↗</span>
-                </div>
-              </div>
-            </a>
-
-            <a href="https://learn-anything-sooty.vercel.app/" target="_blank" class="showcase-card showcase-3">
-              <div class="showcase-inner">
-                <span class="showcase-num">03</span>
-                <div class="showcase-bottom">
-                  <h3>Learn Anything</h3>
-                  <p>AI-powered interactive learning platform.</p>
-                  <span class="showcase-cta">Visit ↗</span>
-                </div>
-              </div>
-            </a>
-
-          </div>
-        </div>
-
-        <!-- NEWS -->
-        <div id="news-area" class="news-section">
-          <h3 class="table-title">News</h3>
-          <div class="news-list">
-            <div class="news-item">
-              <span class="news-date">Aug 2025</span>
-              <span class="news-text">Started PhD at Auburn University. 🐯</span>
-            </div>
-            <div class="news-item">
-              <span class="news-date">May 2025</span>
-              <span class="news-text">Graduated from UT Austin with honors. 🎓</span>
-            </div>
-            <div class="news-item">
-              <span class="news-date">May 2025</span>
-              <span class="news-text">Published chapter on Cardiovascular Risks in CRC Press. 📄</span>
-            </div>
-            <div class="news-item">
-              <span class="news-date">Apr 2025</span>
-              <span class="news-text">Published PageGuide paper on arXiv — browser extension for webpage navigation. 🔬</span>
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-
-      <!-- ═══════════════════════════════════════
-           EXPERIENCE SECTION
-      ═══════════════════════════════════════ -->
-      <section id="experience-section">
-        <div class="exp-section-header">
-          <div class="section-eyebrow">
-            <span class="eyebrow-num">02</span>
-            <span class="eyebrow-slash">/</span>
-            Work
-          </div>
-          <h2 class="section-title">Experience</h2>
-        </div>
-
-        <div class="experience-scroll-wrapper">
-          <div class="experience-scroll">
-
-            <div class="experience experience2 background-section">
-              <div class="exp-content">
-                <div class="exp-meta">
-                  <span class="exp-tag">NLP · Research</span>
-                  <span class="exp-period">May 2024 – May 2025</span>
-                </div>
-                <h2 class="exp-title">Natural Language Processing<br>iSchool Research Group</h2>
-                <p class="exp-location">Austin, TX</p>
-                <p class="exp-role">NLP Developer <span class="exp-stack">Python · Bash · SeamlessM4T</span></p>
-                <ul>
-                  <li>Architected a multilingual NLP pipeline translating 89.6GB of parallel corpora into 28 languages using SeamlessM4T</li>
-                  <li>Co-authored PolyverseVLM, a lightweight vision-language model using 80M SigLIP and 500M Qwen2</li>
-                  <li>Optimized batch parallelism for model fine-tuning, reducing training time by 40%</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="experience experience1 background-section">
-              <div class="exp-content">
-                <div class="exp-meta">
-                  <span class="exp-tag">Full-Stack · Dev</span>
-                  <span class="exp-period">Aug 2022 – May 2025</span>
-                </div>
-                <h2 class="exp-title">Liberal Arts Instructional<br>Technology Services</h2>
-                <p class="exp-location">Austin, TX</p>
-                <p class="exp-role">Junior Software Developer <span class="exp-stack">Python · R · Laravel · Node.js · Docker</span></p>
-                <ul>
-                  <li>Developed 20+ full-stack web apps and dashboards with modular codebases and REST API integration</li>
-                  <li>Migrated legacy Drupal systems to Laravel, implementing advanced filtering and user management</li>
-                  <li>Revamped three WordPress websites, increasing user engagement by 40%</li>
-                  <li>Implemented PDF viewer for UT Instapoll, supporting 50,000+ users across UT Austin classrooms</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="experience experience4 background-section">
-              <div class="exp-content">
-                <div class="exp-meta">
-                  <span class="exp-tag">NLP · Healthcare</span>
-                  <span class="exp-period">Nov 2023 – Mar 2024</span>
-                </div>
-                <h2 class="exp-title">AI Health Lab <a href="https://aihealth.ischool.utexas.edu/team/about_us.html" target="_blank" class="exp-link">↗</a></h2>
-                <p class="exp-location">Austin, TX</p>
-                <p class="exp-role">NLP Research Assistant <span class="exp-stack">BERTopic · Python · Matplotlib</span></p>
-                <ul>
-                  <li>Applied BERTopic with UMAP + HDBSCAN to uncover 20 thematic clusters across 12,146 LLM paper abstracts</li>
-                  <li>Validated clustering integrity using 5 comparative techniques including PCA and dendrogram analysis</li>
-                  <li>Surveyed 12 foundational LLM papers, identifying 3 previously unreported research themes</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="experience experience3 background-section">
-              <div class="exp-content">
-                <div class="exp-meta">
-                  <span class="exp-tag">Startup · Intern</span>
-                  <span class="exp-period">Jun 2023 – Aug 2023</span>
-                </div>
-                <h2 class="exp-title">Claudius Legal Intelligence Inc.</h2>
-                <p class="exp-location">Remote</p>
-                <p class="exp-role">Software Engineering Intern <span class="exp-stack">Python · Django · Figma</span></p>
-                <ul>
-                  <li>Developed 4 production-ready web pages in Django with interactive frontends based on Figma designs</li>
-                  <li>Led UI/UX testing with legal professionals, improving usability scores by 18% in internal testing</li>
-                </ul>
-              </div>
-            </div>
-
-          </div>
-          <div class="experience-scroll-indicator"></div>
-        </div>
-      </section>
-
-
-      <!-- ═══════════════════════════════════════
-           PUBLICATION SECTION
-      ═══════════════════════════════════════ -->
-      <section id="publication-section">
-        <div class="section-eyebrow">
-          <span class="eyebrow-num">03</span>
-          <span class="eyebrow-slash">/</span>
-          Research
-        </div>
-        <h2 class="section-title">Publications</h2>
-
-        <div class="pub-scholar-link">
-          <a href="https://scholar.google.com/citations?user=edMgu7oAAAAJ&hl=en" target="_blank" class="scholar-link">
-            <i class="fas fa-graduation-cap"></i>
-            View full profile on Google Scholar ↗
-          </a>
-        </div>
-
-        <div class="publications-list">
-
-          <div class="pub-card">
-            <div class="pub-num">02</div>
-            <div class="pub-body">
-              <span class="pub-badge">arXiv 2025</span>
-              <h3 class="pub-title">PageGuide: Browser extension to assist users in navigating a webpage and locating information</h3>
-              <p class="pub-venue">arXiv preprint · arXiv:2604.23772 · 2025</p>
-              <cite class="publication-citation">
-                T. Nguyen, T. T. Truong, R. Zhou, T. Bui, C. Agarwal, &amp; A. T. Nguyen. (2025).
-                <i>PageGuide: Browser extension to assist users in navigating a webpage and locating information.</i>
-                arXiv preprint arXiv:2604.23772.
-              </cite>
-              <a href="https://arxiv.org/abs/2604.23772" target="_blank" class="pub-link">Read Paper ↗</a>
-            </div>
-          </div>
-
-          <div class="pub-card">
-            <div class="pub-num">01</div>
-            <div class="pub-body">
-              <span class="pub-badge">CRC Press 2025</span>
-              <h3 class="pub-title">Integrating advanced sensing technologies and artificial intelligence for predicting cardiovascular risks</h3>
-              <p class="pub-venue">CRC Press · Cutting-Edge Diagnostic Technologies in Cardiovascular Diseases · pp. 180–219</p>
-              <cite class="publication-citation">
-                Truong, T. T., Truong, T. T., Tran, B. N. V., Sabet, C. J., Rutledge-Jukes, H., Odat, R. M., Luu, D., Le, M. H. N., Nguyen, T. T. H., Theologou, T., Harky, A., Nguyen, D., &amp; Huynh, P. K. (2025).
-                <i>Integrating advanced sensing technologies and artificial intelligence for predicting cardiovascular risks: A data-driven approach to modern healthcare.</i>
-              </cite>
-              <a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003481621-11/integrating-advanced-sensing-technologies-artificial-intelligence-predicting-cardiovascular-risks-tien-truong-thang-truong-bao-ngoc-tran-cameron-sabet-heath-rutledge-jukes-ramez-odat-dan-luu-minh-huu-nhat-le-tuyen-thi-hong-nguyen-thomas-theologou-amer-harky-dang-nguyen-phat-huynh"
-                 target="_blank" class="pub-link">Read Chapter ↗</a>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-
-      <!-- ═══════════════════════════════════════
-           PLAY SECTION
-      ═══════════════════════════════════════ -->
-      <section id="play-section">
-        <div class="section-eyebrow">
-          <span class="eyebrow-num">04</span>
-          <span class="eyebrow-slash">/</span>
-          Play
-        </div>
-        <h2 class="section-title">Playground</h2>
-
-        <div class="welcome-play-section">
-          <div class="welcome-text">
-            <p>
-              <strong>Welcome to my playground!</strong><br>
-              I've built a few games — feel free to play around.
-              Which game are you in the mood for?
-            </p>
-          </div>
-          <div class="game-selection-buttons">
-            <p class="category-class">Game:</p>
-            <button id="tile" class="game-type-button" data-category="tile">🧱 Tile</button>
-            <button id="wordle" class="game-type-button" data-category="wordle">🔡 Wordle</button>
-          </div>
-        </div>
-
-        <div id="wordle-section" style="display:none;">
-          <p id="game-info" class="game-info">
-            Guess the 5-letter word in 6 tries. Green = right letter &amp; spot. Yellow = right letter, wrong spot. Gray = not in word.
-          </p>
-          <div id="wordle-board" class="wordle-board"></div>
-          <div class="wordle-controls">
-            <input type="text" id="wordle-input" maxlength="5" placeholder="5-letter word" />
-            <div class="button-wordle-class">
-              <button onclick="submitWordleGuess()" id="submit-btn-wordle" class="submit-btn-wordle">Submit</button>
-              <button onclick="resetWordle()" id="reset-btn-wordle" class="reset-btn-wordle">Restart</button>
-            </div>
-          </div>
-          <p id="wordle-message"></p>
-        </div>
-
-        <div id="tile-section">
-          <div class="category-selection">
-            <p class="category-class">🎯 Theme:</p>
-            <div class="category-buttons">
-              <button onclick="handleCategory(event)" data-category="tech" class="category-btn">💻 Technology</button>
-              <button onclick="handleCategory(event)" data-category="marvel" class="category-btn">🦸 Marvel</button>
-            </div>
-          </div>
-          <div id="tile-game">
-            <h1 id="game-title">🧠 Tech Memory Match</h1>
-            <p id="game-info" class="game-info">Flip two tiles to find matching pairs. Match all in the fewest moves!</p>
-            <div id="score">Moves: <span id="moves">0</span> &nbsp;·&nbsp; Best: <span id="best-moves">--</span></div>
-            <button id="restart-button">🔁 Restart</button>
-            <div id="game-board"></div>
-          </div>
-        </div>
-      </section>
-
-
-      <!-- ═══════════════════════════════════════
-           CONTACT SECTION
-      ═══════════════════════════════════════ -->
-      <section id="contact-section">
-        <div class="section-eyebrow">
-          <span class="eyebrow-num">05</span>
-          <span class="eyebrow-slash">/</span>
-          Contact
-        </div>
-        <h2 class="section-title">Get in Touch</h2>
-        <p class="contact-sub">Have a question or want to collaborate? Drop me a message.</p>
-
-        <div class="contact">
-          <div class="contact-box">
-            <form id="contact-form">
-              <div class="from-section">
-                <label for="from-name" class="contact-label">Name</label>
-                <input type="text" id="from-name" name="name" placeholder="Your name..." class="contact-input" required />
-              </div>
-              <div class="from-section">
-                <label for="from-email" class="contact-label">Email</label>
-                <input type="email" id="from-email" name="email" placeholder="Your email..." class="contact-input" required />
-              </div>
-              <div class="message-section">
-                <label for="message" class="contact-label">Message</label>
-                <textarea id="message" name="message" placeholder="Type your message here..." class="contact-textarea" required></textarea>
-              </div>
-              <button id="send-button" class="send-button" type="submit">Send Message ↗</button>
-            </form>
-          </div>
-        </div>
-      </section>
-
+    <div class="scroll-hint">
+      <span class="scroll-text">Scroll to explore</span>
+      <span class="scroll-icon">></span>
     </div>
   </div>
+
+  <!-- ═══════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════ -->
+  <section id="about">
+
+    <div class="about-block">
+      <div class="section-rule"></div>
+      <div class="about-inner">
+        <img src="images/headshot.jpg" alt="Brian Truong" class="profile-pic" />
+        <div class="about-text">
+          <h2 class="about-name">Thang Thoi Truong</h2>
+          <p class="about-role">Software Engineer · AI Researcher · PhD Student</p>
+          <div class="icons">
+            <a href="https://www.linkedin.com/in/truongthoithang/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/BrianTruong23" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:truongthoithang@utexas.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://scholar.google.com/citations?user=edMgu7oAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+          </div>
+          <p>
+            Four years at UT Austin sharpened my craft across full-stack engineering, data visualization, and NLP research. I completed my honors thesis under
+            <a href="https://abhijitmishra.github.io/" target="_blank" class="inline-link">Professor Mishra</a>
+            on multilingual language models, and shipped real-world AI tools through UT Austin's Liberal Arts Technology team.
+          </p>
+          <p>
+            I'm now finishing my first year of a PhD at Auburn University, advised by
+            <a href="https://anhnguyen.me/research/" target="_blank" class="inline-link">Professor Anh Totti Nguyen ↗</a>.
+            My research sits at the intersection of <strong>explainable AI</strong>, visual intelligence, and human-centered systems — building models that not only perform well, but can show <em>why</em> they do. My product
+            <a href="https://neonlightai.vercel.app/" target="_blank" class="inline-link">NeonAI ↗</a> puts that philosophy into practice.
+          </p>
+          <p>
+            Outside the lab, you'll find me at the
+            <span class="highlight" id="open-modal-cinema">cinema ↗</span>, on the tennis court, grinding Leetcode, or at the gym.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience preview cards -->
+    <div class="about-exp-preview">
+      <h3 class="table-title">Experience</h3>
+      <div class="exp-preview-grid">
+        <div class="exp-preview-card" style="background-image:url(images/ischool.jpg)">
+          <div class="epc-overlay">
+            <span class="epc-tag">NLP · Research</span>
+            <h4>NLP iSchool Research Group</h4>
+            <p>NLP Developer · UT Austin · 2024–2025</p>
+          </div>
+        </div>
+        <div class="exp-preview-card" style="background-image:url(images/laits.jpeg)">
+          <div class="epc-overlay">
+            <span class="epc-tag">Full-Stack · Dev</span>
+            <h4>Liberal Arts IT Services</h4>
+            <p>Junior SWE · UT Austin · 2022–2025</p>
+          </div>
+        </div>
+        <div class="exp-preview-card" style="background-image:url(images/ai_in_medicine.jpg)">
+          <div class="epc-overlay">
+            <span class="epc-tag">NLP · Healthcare</span>
+            <h4>AI Health Lab</h4>
+            <p>NLP Research Assistant · 2023–2024</p>
+          </div>
+        </div>
+        <div class="exp-preview-card" style="background-image:url(images/startup.jpg)">
+          <div class="epc-overlay">
+            <span class="epc-tag">Startup · Intern</span>
+            <h4>Claudius Legal AI</h4>
+            <p>SWE Intern · Remote · Summer 2023</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products showcase -->
+    <div class="showcase-section">
+      <h3 class="table-title">Selected Work</h3>
+      <div class="showcase-row">
+        <a href="https://neonlightai.vercel.app/" target="_blank" class="showcase-card showcase-1">
+          <div class="showcase-inner">
+            <span class="showcase-num">01</span>
+            <div class="showcase-bottom">
+              <h3>NeonAI</h3>
+              <p>Transparency &amp; interpretability in AI model reasoning.</p>
+              <span class="showcase-cta">Visit ↗</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://ofcourt-badminton.vercel.app/" target="_blank" class="showcase-card showcase-2">
+          <div class="showcase-inner">
+            <span class="showcase-num">02</span>
+            <div class="showcase-bottom">
+              <h3>OfCourt</h3>
+              <p>Badminton e-commerce platform for enthusiasts.</p>
+              <span class="showcase-cta">Visit ↗</span>
+            </div>
+          </div>
+        </a>
+        <a href="https://learn-anything-sooty.vercel.app/" target="_blank" class="showcase-card showcase-3">
+          <div class="showcase-inner">
+            <span class="showcase-num">03</span>
+            <div class="showcase-bottom">
+              <h3>Learn Anything</h3>
+              <p>AI-powered interactive learning platform.</p>
+              <span class="showcase-cta">Visit ↗</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://pageguide.github.io" target="_blank" class="showcase-card showcase-4">
+          <div class="showcase-inner">
+            <span class="showcase-num">04</span>
+            <div class="showcase-bottom">
+              <h3>PageGuide</h3>
+              <p>Browser extension for AI-assisted webpage navigation.</p>
+              <span class="showcase-cta">Visit ↗</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- News -->
+    <div class="news-section">
+      <h3 class="table-title">News</h3>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-date">Aug 2025</span>
+          <span class="news-text">Started PhD at Auburn University. 🐯</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">May 2025</span>
+          <span class="news-text">Graduated from UT Austin with honors. 🎓</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">May 2025</span>
+          <span class="news-text">Published chapter on Cardiovascular Risks — CRC Press. 📄</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">Apr 2025</span>
+          <span class="news-text">PageGuide paper published on arXiv — browser navigation extension. 🔬</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       WORK / EXPERIENCE
+  ═══════════════════════════════════════ -->
+  <section id="work" class="page-section">
+
+    <div class="section-eyebrow">
+      <span class="eyebrow-num">02</span>
+      <span class="eyebrow-slash">/</span>
+      Work
+    </div>
+    <h2 class="section-title">Experience</h2>
+
+    <div class="work-timeline">
+
+      <div class="wt-item">
+        <div class="wt-period">2024 – 2025</div>
+        <div class="wt-body">
+          <h3>Natural Language Processing iSchool Research Group</h3>
+          <p class="wt-role">NLP Developer · UT Austin, TX</p>
+          <ul>
+            <li>Architected a multilingual NLP pipeline translating 89.6 GB of parallel corpora into 28 languages using SeamlessM4T</li>
+            <li>Co-authored PolyverseVLM — a lightweight vision-language model using 80M SigLIP and 500M Qwen2</li>
+            <li>Optimized batch parallelism for model fine-tuning, reducing training time by 40%</li>
+          </ul>
+          <div class="wt-tags"><span>Python</span><span>Bash</span><span>SeamlessM4T</span><span>Qwen2</span></div>
+        </div>
+      </div>
+
+      <div class="wt-item">
+        <div class="wt-period">2022 – 2025</div>
+        <div class="wt-body">
+          <h3>Liberal Arts Instructional Technology Services</h3>
+          <p class="wt-role">Junior Software Developer · UT Austin, TX</p>
+          <ul>
+            <li>Developed 20+ full-stack web apps and dashboards with modular codebases and REST API integration</li>
+            <li>Migrated legacy Drupal systems to Laravel, implementing advanced filtering and user management</li>
+            <li>Revamped three WordPress websites, increasing user engagement by 40%</li>
+            <li>Implemented PDF viewer for UT Instapoll, supporting 50,000+ users across UT Austin classrooms</li>
+          </ul>
+          <div class="wt-tags"><span>Python</span><span>Laravel</span><span>Node.js</span><span>Docker</span><span>R</span><span>Tableau</span></div>
+        </div>
+      </div>
+
+      <div class="wt-item">
+        <div class="wt-period">2023 – 2024</div>
+        <div class="wt-body">
+          <h3>AI Health Lab <a href="https://aihealth.ischool.utexas.edu/team/about_us.html" target="_blank" class="inline-link">↗</a></h3>
+          <p class="wt-role">NLP Research Assistant · UT Austin, TX</p>
+          <ul>
+            <li>Applied BERTopic with UMAP + HDBSCAN to uncover 20 thematic clusters across 12,146 LLM paper abstracts</li>
+            <li>Validated clustering integrity using 5 comparative techniques including PCA and dendrogram analysis</li>
+            <li>Surveyed 12 foundational LLM papers, identifying 3 previously unreported research themes</li>
+          </ul>
+          <div class="wt-tags"><span>BERTopic</span><span>Python</span><span>UMAP</span><span>Matplotlib</span></div>
+        </div>
+      </div>
+
+      <div class="wt-item">
+        <div class="wt-period">Summer 2023</div>
+        <div class="wt-body">
+          <h3>Claudius Legal Intelligence Inc.</h3>
+          <p class="wt-role">Software Engineering Intern · Remote</p>
+          <ul>
+            <li>Developed 4 production-ready Django web pages with interactive frontends from Figma designs</li>
+            <li>Led UI/UX testing with legal professionals, improving usability scores by 18% in internal testing</li>
+          </ul>
+          <div class="wt-tags"><span>Python</span><span>Django</span><span>Figma</span><span>Bootstrap</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       RESEARCH
+  ═══════════════════════════════════════ -->
+  <section id="research" class="page-section">
+
+    <div class="section-eyebrow">
+      <span class="eyebrow-num">03</span>
+      <span class="eyebrow-slash">/</span>
+      Research
+    </div>
+    <h2 class="section-title">Publications</h2>
+
+    <div class="pub-scholar-link">
+      <a href="https://scholar.google.com/citations?user=edMgu7oAAAAJ&hl=en" target="_blank" class="scholar-link">
+        <i class="fas fa-graduation-cap"></i>
+        View full profile on Google Scholar ↗
+      </a>
+    </div>
+
+    <div class="publications-list">
+
+      <div class="pub-card">
+        <div class="pub-num">02</div>
+        <div class="pub-body">
+          <span class="pub-badge">arXiv 2025</span>
+          <h3 class="pub-title">PageGuide: Browser extension to assist users in navigating a webpage and locating information</h3>
+          <p class="pub-venue">arXiv preprint · arXiv:2604.23772 · 2025</p>
+          <cite class="publication-citation">
+            T. Nguyen, T. T. Truong, R. Zhou, T. Bui, C. Agarwal, &amp; A. T. Nguyen. (2025).
+            <i>PageGuide: Browser extension to assist users in navigating a webpage and locating information.</i>
+            arXiv preprint arXiv:2604.23772.
+          </cite>
+          <a href="https://arxiv.org/abs/2604.23772" target="_blank" class="pub-link">Read Paper ↗</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-num">01</div>
+        <div class="pub-body">
+          <span class="pub-badge">CRC Press 2025</span>
+          <h3 class="pub-title">Integrating advanced sensing technologies and artificial intelligence for predicting cardiovascular risks</h3>
+          <p class="pub-venue">CRC Press · Cutting-Edge Diagnostic Technologies in Cardiovascular Diseases · pp. 180–219</p>
+          <cite class="publication-citation">
+            Truong, T. T., Truong, T. T., Tran, B. N. V., Sabet, C. J., Rutledge-Jukes, H., Odat, R. M., Luu, D., Le, M. H. N., Nguyen, T. T. H., Theologou, T., Harky, A., Nguyen, D., &amp; Huynh, P. K. (2025).
+            <i>Integrating advanced sensing technologies and artificial intelligence for predicting cardiovascular risks: A data-driven approach to modern healthcare.</i>
+          </cite>
+          <a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003481621-11/integrating-advanced-sensing-technologies-artificial-intelligence-predicting-cardiovascular-risks-tien-truong-thang-truong-bao-ngoc-tran-cameron-sabet-heath-rutledge-jukes-ramez-odat-dan-luu-minh-huu-nhat-le-tuyen-thi-hong-nguyen-thomas-theologou-amer-harky-dang-nguyen-phat-huynh"
+             target="_blank" class="pub-link">Read Chapter ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       PLAY — Interactive section
+  ═══════════════════════════════════════ -->
+  <section id="play" class="page-section">
+
+    <div class="section-eyebrow">
+      <span class="eyebrow-num">04</span>
+      <span class="eyebrow-slash">/</span>
+      Play
+    </div>
+    <h2 class="section-title">A Bit About Me</h2>
+
+    <!-- ── Interactive numbered explorer ── -->
+    <div class="num-explorer">
+      <div class="num-explorer-left">
+        <button class="num-tab-btn active" data-tab="1">
+          <span class="ntb-num">01</span>
+          <span class="ntb-label">Research</span>
+        </button>
+        <button class="num-tab-btn" data-tab="2">
+          <span class="ntb-num">02</span>
+          <span class="ntb-label">Off the Clock</span>
+        </button>
+        <button class="num-tab-btn" data-tab="3">
+          <span class="ntb-num">03</span>
+          <span class="ntb-label">Philosophy</span>
+        </button>
+      </div>
+
+      <div class="num-explorer-right">
+        <div class="num-tab-content active" data-tab="1">
+          <p class="ntc-eyebrow">What I work on</p>
+          <h3>Explainable AI &amp;<br>Visual Intelligence</h3>
+          <p>I build models that don't just predict — they explain. My current work at Auburn focuses on making AI systems more transparent, interpretable, and human-friendly. If a model can't show its reasoning, it can't earn trust.</p>
+          <p>Recent work: <a href="https://arxiv.org/abs/2604.23772" target="_blank" class="inline-link">PageGuide ↗</a> — helping users navigate complex webpages using AI.</p>
+        </div>
+
+        <div class="num-tab-content" data-tab="2">
+          <p class="ntc-eyebrow">When I'm not coding</p>
+          <h3>Cinema. Tennis.<br>Weights. Repeat.</h3>
+          <p>I'm an AMC A-List member and have watched 40+ films in the last year — yes, I track every one with a rating. On weekends you'll find me on a tennis court or in the gym.</p>
+          <p>Currently obsessed with: <span class="inline-link" id="open-modal-cinema-2" style="cursor:pointer">my movie log ↗</span></p>
+        </div>
+
+        <div class="num-tab-content" data-tab="3">
+          <p class="ntc-eyebrow">How I think about AI</p>
+          <h3>Amplify, don't<br>replace.</h3>
+          <p>The best AI is a multiplier. I believe in building systems where the human stays in the loop — curious, empowered, and still the one making the final call.</p>
+          <div class="ntc-formula">
+            <code>Output = You + Max(AI)</code>
+            <span>not <code class="formula-muted">Max(You, AI)</code></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Drawing board ── -->
+    <div class="drawing-section">
+      <div class="drawing-header">
+        <div>
+          <h3 class="drawing-title">Leave Your Mark</h3>
+          <p class="drawing-sub">Draw anything — a doodle, an emoji, a signature. This canvas is yours.</p>
+        </div>
+      </div>
+
+      <div class="drawing-workspace">
+        <canvas id="drawing-canvas" width="900" height="360"></canvas>
+        <div class="drawing-toolbar">
+          <div class="toolbar-group">
+            <button class="color-swatch active" data-color="#111111" title="Black" style="--c:#111111"></button>
+            <button class="color-swatch" data-color="#F59E0B" title="Amber"  style="--c:#F59E0B"></button>
+            <button class="color-swatch" data-color="#FF6B35" title="Orange" style="--c:#FF6B35"></button>
+            <button class="color-swatch" data-color="#4A90D9" title="Blue"   style="--c:#4A90D9"></button>
+            <button class="color-swatch white-swatch" data-color="#FFFFFF"   title="White" style="--c:#FFFFFF"></button>
+          </div>
+          <div class="toolbar-group toolbar-size">
+            <i class="fa-solid fa-circle" style="font-size:6px;opacity:.5"></i>
+            <input type="range" id="brush-size" min="2" max="24" value="6" title="Brush size" />
+            <i class="fa-solid fa-circle" style="font-size:14px;opacity:.5"></i>
+          </div>
+          <div class="toolbar-group">
+            <button class="toolbar-btn" id="eraser-btn" title="Eraser">
+              <i class="fa-solid fa-eraser"></i>
+            </button>
+            <button class="toolbar-btn" id="clear-canvas" title="Clear all">
+              <i class="fa-solid fa-trash-can"></i> Clear
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════ -->
+  <section id="contact" class="page-section">
+
+    <div class="section-eyebrow">
+      <span class="eyebrow-num">05</span>
+      <span class="eyebrow-slash">/</span>
+      Contact
+    </div>
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="contact-sub">Have a question or want to collaborate? Drop me a message.</p>
+
+    <div class="contact">
+      <div class="contact-box">
+        <form id="contact-form">
+          <div class="from-section">
+            <label for="from-name" class="contact-label">Name</label>
+            <input type="text" id="from-name" name="name" placeholder="Your name..." class="contact-input" required />
+          </div>
+          <div class="from-section">
+            <label for="from-email" class="contact-label">Email</label>
+            <input type="email" id="from-email" name="email" placeholder="Your email..." class="contact-input" required />
+          </div>
+          <div class="message-section">
+            <label for="message" class="contact-label">Message</label>
+            <textarea id="message" name="message" placeholder="Type your message here..." class="contact-textarea" required></textarea>
+          </div>
+          <button id="send-button" class="send-button" type="submit">Send Message ↗</button>
+        </form>
+      </div>
+    </div>
+
+  </section>
+
 
   <!-- ── FOOTER ── -->
   <footer class="footer">
@@ -462,7 +508,7 @@
       <div class="footer-left">
         <span class="footer-logo">BT</span>
         <p>© <span id="copyright-year"></span> Thang T. Truong. All rights reserved.</p>
-        <span class="footer-version">v4.1</span>
+        <span class="footer-version">v5.0</span>
       </div>
       <div class="footer-icons">
         <a href="https://www.linkedin.com/in/truongthoithang/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -475,26 +521,20 @@
 
 
   <!-- ═══════════════════════════════════════
-       MODALS (outside main layout flow)
+       MODALS
   ═══════════════════════════════════════ -->
 
   <!-- Philosophy Modal -->
-  <div id="philosophyModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="philosophy-title">
+  <div id="philosophyModal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-backdrop" id="closePhilosophyBackdrop"></div>
     <div class="modal-panel">
       <div class="modal-header">
-        <h2 id="philosophy-title">My Philosophy</h2>
-        <button class="modal-close-btn" id="closeModal" aria-label="Close">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
+        <h2>My Philosophy</h2>
+        <button class="modal-close-btn" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
       </div>
       <div class="modal-body">
-        <p>
-          I believe technology should be both <strong>innovative</strong> and <strong>transparent</strong>. My philosophy centers on <strong>ethical innovation</strong>, <strong>inclusivity</strong>, and building tools that <strong>empower</strong> rather than replace human intelligence.
-        </p>
-        <p>
-          The future of AI is collaborative — not competitive. I think of it this way:
-        </p>
+        <p>I believe technology should be both <strong>innovative</strong> and <strong>transparent</strong>. My philosophy centers on <strong>ethical innovation</strong>, <strong>inclusivity</strong>, and building tools that <strong>empower</strong> rather than replace human intelligence.</p>
+        <p>The future of AI is collaborative — not competitive. I think of it this way:</p>
         <div class="philosophy-formula">
           <div class="formula-row">
             <span class="formula-label">The right equation</span>
@@ -506,31 +546,26 @@
             <code class="formula-muted">Output = Max(You, AI)</code>
           </div>
         </div>
-        <p>
-          Technology should amplify human potential, not overshadow it.
-        </p>
+        <p>Technology should amplify human potential, not overshadow it.</p>
       </div>
     </div>
   </div>
 
   <!-- Cinema Modal -->
-  <div id="modal-cinema" class="modal" role="dialog" aria-modal="true" aria-labelledby="cinema-title">
+  <div id="modal-cinema" class="modal" role="dialog" aria-modal="true">
     <div class="modal-backdrop" id="closeCinemaBackdrop"></div>
     <div class="modal-panel modal-panel-wide">
       <div class="modal-header">
         <div class="modal-header-group">
           <span class="modal-emoji">🎬</span>
           <div>
-            <h2 id="cinema-title">Movie Log</h2>
+            <h2>Movie Log</h2>
             <p class="modal-subtitle">Sci-fi · Thrillers · Animation</p>
           </div>
         </div>
-        <button class="modal-close-btn" id="close-modal-cinema" aria-label="Close">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
+        <button class="modal-close-btn" id="close-modal-cinema"><i class="fa-solid fa-xmark"></i></button>
       </div>
       <div class="modal-body modal-body-scroll">
-
         <div class="cinema-favorites">
           <p class="cinema-section-label">All-Time Top 3</p>
           <div class="cinema-top-list">
@@ -539,43 +574,28 @@
             <div class="cinema-top-item"><span class="cinema-rank amber">#3</span><span>Mission: Impossible – The Final Reckoning</span></div>
           </div>
         </div>
-
-        <div class="cinema-log-header">
-          <p class="cinema-section-label">Watched 2023–2025</p>
-        </div>
-
+        <div class="cinema-log-header"><p class="cinema-section-label">Watched 2023–2025</p></div>
         <div class="cinema-log">
           <div class="cinema-log-item"><span class="cli-title">Nosferatu</span><span class="cli-date">Dec 26, 2024</span><span class="cli-rating">★ 8.4</span></div>
           <div class="cinema-log-item"><span class="cli-title">Red One</span><span class="cli-date">Dec 23, 2024</span><span class="cli-rating">★ 7.1</span></div>
           <div class="cinema-log-item"><span class="cli-title">Wicked</span><span class="cli-date">Dec 10, 2024</span><span class="cli-rating">★ 8.0</span></div>
           <div class="cinema-log-item"><span class="cli-title">Moana 2</span><span class="cli-date">Dec 6, 2024</span><span class="cli-rating">★ 7.8</span></div>
-          <div class="cinema-log-item"><span class="cli-title">Bonhoeffer</span><span class="cli-date">Nov 22, 2024</span><span class="cli-rating">★ 7.5</span></div>
-          <div class="cinema-log-item"><span class="cli-title">The Wild Robot</span><span class="cli-date">Nov 16, 2024</span><span class="cli-rating">★ 7.0</span></div>
           <div class="cinema-log-item"><span class="cli-title">We Live in Time</span><span class="cli-date">Nov 14, 2024</span><span class="cli-rating">★ 8.5</span></div>
           <div class="cinema-log-item"><span class="cli-title">Ne Zha 2</span><span class="cli-date">Feb 17, 2025</span><span class="cli-rating">★ 9.0</span></div>
           <div class="cinema-log-item"><span class="cli-title">Captain America: Brave New World</span><span class="cli-date">Feb 14, 2025</span><span class="cli-rating">★ 7.7</span></div>
           <div class="cinema-log-item"><span class="cli-title">Companion</span><span class="cli-date">Jan 31, 2025</span><span class="cli-rating">★ 7.6</span></div>
-          <div class="cinema-log-item"><span class="cli-title">Wolf Man</span><span class="cli-date">Jan 19, 2025</span><span class="cli-rating">★ 7.3</span></div>
-          <div class="cinema-log-item"><span class="cli-title">Den of Thieves 2: Pantera</span><span class="cli-date">Jan 18, 2025</span><span class="cli-rating">★ 6.7</span></div>
           <div class="cinema-log-item"><span class="cli-title">A Minecraft Movie</span><span class="cli-date">Apr 8, 2025</span><span class="cli-rating">★ 9.0</span></div>
           <div class="cinema-log-item"><span class="cli-title">Last Breath</span><span class="cli-date">Mar 12, 2025</span><span class="cli-rating">★ 8.2</span></div>
           <div class="cinema-log-item"><span class="cli-title">Mickey 17</span><span class="cli-date">Mar 6, 2025</span><span class="cli-rating">★ 7.9</span></div>
-          <div class="cinema-log-item"><span class="cli-title">Disney's Snow White</span><span class="cli-date">Mar 25, 2025</span><span class="cli-rating">★ 7.5</span></div>
-          <div class="cinema-log-item"><span class="cli-title">Anora</span><span class="cli-date">Mar 7, 2025</span><span class="cli-rating">★ 7.4</span></div>
-          <div class="cinema-log-item"><span class="cli-title">Thunderbolts*</span><span class="cli-date">May 2, 2025</span><span class="cli-rating">★ 7.1</span></div>
-          <div class="cinema-log-item"><span class="cli-title">Sinners</span><span class="cli-date">Apr 19, 2025</span><span class="cli-rating">★ 6.9</span></div>
-          <div class="cinema-log-item"><span class="cli-title">Warfare</span><span class="cli-date">Apr 15, 2025</span><span class="cli-rating">★ 7.0</span></div>
           <div class="cinema-log-item"><span class="cli-title">Mission: Impossible – Final Reckoning</span><span class="cli-date">May 23, 2025</span><span class="cli-rating">★ 8.2</span></div>
           <div class="cinema-log-item"><span class="cli-title">Karate Kid: Legends</span><span class="cli-date">Jun 3, 2025</span><span class="cli-rating">★ 8.5</span></div>
           <div class="cinema-log-item"><span class="cli-title">How to Train Your Dragon</span><span class="cli-date">Jun 17, 2025</span><span class="cli-rating">★ 8.6</span></div>
           <div class="cinema-log-item"><span class="cli-title">F1 The Movie</span><span class="cli-date">Jun 27, 2025</span><span class="cli-rating">★ 9.0</span></div>
           <div class="cinema-log-item"><span class="cli-title">Jurassic World Rebirth</span><span class="cli-date">Jul 2, 2025</span><span class="cli-rating">★ 8.0</span></div>
         </div>
-
       </div>
     </div>
   </div>
-
 
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script src="script.js"></script>
