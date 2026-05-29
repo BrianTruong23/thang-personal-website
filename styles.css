@@ -734,11 +734,11 @@ code { font-family: 'SF Mono','Fira Code','Consolas',monospace; font-size: 0.88r
 .footer-icons a:hover { color: var(--amber); }
 
 /* ─────────────────────────────────────────────────
-   GOAT LOGO — theme visibility
+   GOAT LOGO — circular photo mark, no invert needed
 ───────────────────────────────────────────────── */
-[data-theme="dark"] .site-logo-mark,
-[data-theme="dark"] .footer-logo-mark {
-  filter: invert(1);
+.site-logo-mark,
+.footer-logo-mark {
+  border-radius: 50%;
 }
 
 /* ─────────────────────────────────────────────────
