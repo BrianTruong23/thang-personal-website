@@ -83,14 +83,20 @@ document.addEventListener("DOMContentLoaded", () => {
     p.style.transform = `rotate(${rot}deg) translateY(16px) scale(0.96)`;
   });
 
-  // Top row first (0ms), middle (500ms), bottom (1000ms)
-  const staggerDelays = [0, 500, 1000, 0, 500, 1000];
+  // Enter: top row (0ms) → middle (500ms) → bottom (1000ms)
+  const enterDelays = [0, 500, 1000, 0, 500, 1000];
+  // Leave: bottom fades first, top last
+  const leaveDelays = [1000, 500, 0, 1000, 500, 0];
+
+  function makeTransition(delay) {
+    const ease = "cubic-bezier(0.22, 1, 0.36, 1)";
+    return `transform 1s ${ease} ${delay}ms, opacity 0.9s ${ease} ${delay}ms, filter 0.9s ${ease} ${delay}ms`;
+  }
 
   hero.addEventListener("mouseenter", () => {
     pics.forEach((p, i) => {
-      const rot   = parseFloat(p.dataset.rot || 0);
-      const delay = staggerDelays[i] || 0;
-      p.style.transition = `transform 1s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`;
+      const rot = parseFloat(p.dataset.rot || 0);
+      p.style.transition = makeTransition(enterDelays[i] || 0);
       p.style.transform  = `rotate(${rot}deg) translate(0,0) scale(1)`;
     });
   });
@@ -99,22 +105,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const rect = hero.getBoundingClientRect();
     const mx   = (e.clientX - rect.left) / rect.width  - 0.5;
     const my   = (e.clientY - rect.top)  / rect.height - 0.5;
-
     pics.forEach(p => {
       const rot   = parseFloat(p.dataset.rot   || 0);
       const speed = parseFloat(p.dataset.speed || 1);
-      const tx    = mx * 40 * speed;
-      const ty    = my * 26 * speed;
       p.style.transition = "transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)";
-      p.style.transform  = `rotate(${rot}deg) translate(${tx}px, ${ty}px) scale(1)`;
+      p.style.transform  = `rotate(${rot}deg) translate(${mx * 40 * speed}px, ${my * 26 * speed}px) scale(1)`;
     });
   });
 
   hero.addEventListener("mouseleave", () => {
     pics.forEach((p, i) => {
-      const rot   = parseFloat(p.dataset.rot || 0);
-      const delay = staggerDelays[i] || 0;
-      p.style.transition = `transform 1s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`;
+      const rot = parseFloat(p.dataset.rot || 0);
+      p.style.transition = makeTransition(leaveDelays[i] || 0);
       p.style.transform  = `rotate(${rot}deg) translate(0,0) scale(0.98)`;
     });
   });

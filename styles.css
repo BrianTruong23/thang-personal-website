@@ -734,12 +734,8 @@ code { font-family: 'SF Mono','Fira Code','Consolas',monospace; font-size: 0.88r
 .footer-icons a:hover { color: var(--amber); }
 
 /* ─────────────────────────────────────────────────
-   GOAT LOGO — circular photo mark, no invert needed
+   GOAT LOGO — SVG has its own shape, no overrides needed
 ───────────────────────────────────────────────── */
-.site-logo-mark,
-.footer-logo-mark {
-  border-radius: 50%;
-}
 
 /* ─────────────────────────────────────────────────
    SHOWCASE V2 — LIGHT MODE OVERRIDES
