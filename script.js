@@ -26,6 +26,7 @@ themeBtn?.addEventListener("click", () => {
 
 // ── Single-page nav ────────────────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
+  const header = document.getElementById("site-header");
   const navLinks = document.querySelectorAll("nav ul li a.nav-link");
 
   // Smooth scroll on nav click
@@ -35,7 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const id = link.getAttribute("href").slice(1);
       const target = document.getElementById(id);
       if (target) {
-        const offset = target.getBoundingClientRect().top + window.scrollY - 64;
+        const headerOffset = header?.offsetHeight || 64;
+        const offset = target.getBoundingClientRect().top + window.scrollY - headerOffset;
         window.scrollTo({ top: offset, behavior: "smooth" });
       }
     });
@@ -78,7 +80,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Apply initial rotations
   pics.forEach(p => {
     const rot = parseFloat(p.dataset.rot || 0);
-    p.style.transform = `rotate(${rot}deg)`;
+    p.style.transform = `rotate(${rot}deg) translateY(16px) scale(0.96)`;
+  });
+
+  hero.addEventListener("mouseenter", () => {
+    pics.forEach(p => {
+      const rot = parseFloat(p.dataset.rot || 0);
+      p.style.transition = "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)";
+      p.style.transform = `rotate(${rot}deg) translate(0,0) scale(1)`;
+    });
   });
 
   hero.addEventListener("mousemove", e => {
@@ -91,16 +101,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const speed = parseFloat(p.dataset.speed || 1);
       const tx    = mx * 40 * speed;
       const ty    = my * 26 * speed;
-      p.style.transition = "transform 0.12s ease";
-      p.style.transform  = `rotate(${rot}deg) translate(${tx}px, ${ty}px)`;
+      p.style.transition = "transform 0.28s cubic-bezier(0.22, 1, 0.36, 1)";
+      p.style.transform  = `rotate(${rot}deg) translate(${tx}px, ${ty}px) scale(1)`;
     });
   });
 
   hero.addEventListener("mouseleave", () => {
     pics.forEach(p => {
       const rot = parseFloat(p.dataset.rot || 0);
-      p.style.transition = "transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94)";
-      p.style.transform  = `rotate(${rot}deg) translate(0,0)`;
+      p.style.transition = "transform 0.9s cubic-bezier(0.22, 1, 0.36, 1)";
+      p.style.transform  = `rotate(${rot}deg) translate(0,0) scale(0.98)`;
     });
   });
 });
@@ -138,6 +148,30 @@ window.addEventListener("keydown", e => {
   }
 });
 
+
+// ── Showcase drag-to-scroll + arrow ───────────────────────────────────────
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.getElementById("showcase-track");
+  if (!track) return;
+
+  let isDown = false, startX = 0, scrollLeft = 0;
+
+  track.addEventListener("mousedown", e => {
+    isDown = true;
+    track.classList.add("grabbing");
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+  track.addEventListener("mouseleave", () => { isDown = false; track.classList.remove("grabbing"); });
+  track.addEventListener("mouseup",    () => { isDown = false; track.classList.remove("grabbing"); });
+  track.addEventListener("mousemove", e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    track.scrollLeft = scrollLeft - (x - startX) * 1.4;
+  });
+
+});
 
 // ── Typewriter ─────────────────────────────────────────────────────────────
 const roles        = ["a Software Engineer.", "an AI fanatic.", "an AMC VIP member."];

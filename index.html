@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brian Truong — PhD Student & Software Engineer</title>
-  <link rel="icon" type="image/png" href="images/favicon2.png" />
+  <link rel="icon" type="image/svg+xml" href="images/goat-clean.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -26,7 +26,9 @@
 
   <!-- ── HEADER ── -->
   <header id="site-header">
-    <a href="#hero" class="site-logo">BT</a>
+    <a href="#hero" class="site-logo" aria-label="Home">
+      <img src="images/goat-clean.svg" alt="" class="site-logo-mark" />
+    </a>
     <nav>
       <ul>
         <li><a href="#about" class="nav-link">About</a></li>
@@ -46,7 +48,7 @@
   ═══════════════════════════════════════ -->
   <div id="hero" class="hero-block">
 
-    <!-- Polaroid photos — visible always, parallax on mouse move -->
+    <!-- Polaroid photos — revealed on hover, with parallax on mouse move -->
     <div class="hero-polaroids" aria-hidden="true">
       <div class="hero-polaroid" data-rot="-9"  data-speed="0.9" style="left:-0.5%;top:8%">
         <img src="images/Unknown-3.jpg" alt="" />
@@ -121,8 +123,8 @@
           <p>
             I'm now finishing my first year of a PhD at Auburn University, advised by
             <a href="https://anhnguyen.me/research/" target="_blank" class="inline-link">Professor Anh Totti Nguyen ↗</a>.
-            My research sits at the intersection of <strong>explainable AI</strong>, visual intelligence, and human-centered systems — building models that not only perform well, but can show <em>why</em> they do. My product
-            <a href="https://neonlightai.vercel.app/" target="_blank" class="inline-link">NeonAI ↗</a> puts that philosophy into practice.
+            My research sits at the intersection of <strong>explainable AI</strong>, visual intelligence, and human-centered systems — building models that not only perform well, but can show <em>why</em> they do. My research
+            <a href="https://pageguide.github.io" target="_blank" class="inline-link">PageGuide ↗</a> puts that philosophy into practice.
           </p>
           <p>
             Outside the lab, you'll find me at the
@@ -132,85 +134,61 @@
       </div>
     </div>
 
-    <!-- Experience preview cards -->
-    <div class="about-exp-preview">
-      <h3 class="table-title">Experience</h3>
-      <div class="exp-preview-grid">
-        <div class="exp-preview-card" style="background-image:url(images/ischool.jpg)">
-          <div class="epc-overlay">
-            <span class="epc-tag">NLP · Research</span>
-            <h4>NLP iSchool Research Group</h4>
-            <p>NLP Developer · UT Austin · 2024–2025</p>
-          </div>
-        </div>
-        <div class="exp-preview-card" style="background-image:url(images/laits.jpeg)">
-          <div class="epc-overlay">
-            <span class="epc-tag">Full-Stack · Dev</span>
-            <h4>Liberal Arts IT Services</h4>
-            <p>Junior SWE · UT Austin · 2022–2025</p>
-          </div>
-        </div>
-        <div class="exp-preview-card" style="background-image:url(images/ai_in_medicine.jpg)">
-          <div class="epc-overlay">
-            <span class="epc-tag">NLP · Healthcare</span>
-            <h4>AI Health Lab</h4>
-            <p>NLP Research Assistant · 2023–2024</p>
-          </div>
-        </div>
-        <div class="exp-preview-card" style="background-image:url(images/startup.jpg)">
-          <div class="epc-overlay">
-            <span class="epc-tag">Startup · Intern</span>
-            <h4>Claudius Legal AI</h4>
-            <p>SWE Intern · Remote · Summer 2023</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Products showcase -->
     <div class="showcase-section">
-      <h3 class="table-title">Selected Work</h3>
-      <div class="showcase-row">
-        <a href="https://neonlightai.vercel.app/" target="_blank" class="showcase-card showcase-1">
-          <div class="showcase-inner">
-            <span class="showcase-num">01</span>
-            <div class="showcase-bottom">
-              <h3>NeonAI</h3>
-              <p>Transparency &amp; interpretability in AI model reasoning.</p>
-              <span class="showcase-cta">Visit ↗</span>
-            </div>
+      <div class="showcase-intro">
+        <p class="sc-eyebrow">Selected Work</p>
+        <h2 class="sc-headline">What I built.<br><em>Four ideas —<br>shipped.</em></h2>
+        <p class="sc-intro-sub">From AI research to e-commerce. Drag or scroll to explore each project.</p>
+      </div>
+      <div class="showcase-track" id="showcase-track">
+
+        <a href="https://neonlightai.vercel.app/" target="_blank" class="sc-card sc-card-amber">
+          <div class="sc-top-row">
+            <span class="sc-num">01</span>
+            <span class="sc-date">2024</span>
           </div>
-        </a>
-        <a href="https://ofcourt-badminton.vercel.app/" target="_blank" class="showcase-card showcase-2">
-          <div class="showcase-inner">
-            <span class="showcase-num">02</span>
-            <div class="showcase-bottom">
-              <h3>OfCourt</h3>
-              <p>Badminton e-commerce platform for enthusiasts.</p>
-              <span class="showcase-cta">Visit ↗</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://learn-anything-sooty.vercel.app/" target="_blank" class="showcase-card showcase-3">
-          <div class="showcase-inner">
-            <span class="showcase-num">03</span>
-            <div class="showcase-bottom">
-              <h3>Learn Anything</h3>
-              <p>AI-powered interactive learning platform.</p>
-              <span class="showcase-cta">Visit ↗</span>
-            </div>
-          </div>
+          <div class="sc-emoji">🔍</div>
+          <h3 class="sc-name">NeonAI</h3>
+          <p class="sc-role">AI Transparency Tool</p>
+          <p class="sc-desc">Explainability dashboard that surfaces the reasoning behind AI model predictions — making black-box decisions readable for researchers and stakeholders.</p>
+          <span class="sc-pill">Visit NeonAI ↗</span>
         </a>
 
-        <a href="https://pageguide.github.io" target="_blank" class="showcase-card showcase-4">
-          <div class="showcase-inner">
-            <span class="showcase-num">04</span>
-            <div class="showcase-bottom">
-              <h3>PageGuide</h3>
-              <p>Browser extension for AI-assisted webpage navigation.</p>
-              <span class="showcase-cta">Visit ↗</span>
-            </div>
+        <a href="https://ofcourt-badminton.vercel.app/" target="_blank" class="sc-card sc-card-orange">
+          <div class="sc-top-row">
+            <span class="sc-num">02</span>
+            <span class="sc-date">2024</span>
           </div>
+          <div class="sc-emoji">🏸</div>
+          <h3 class="sc-name">OfCourt</h3>
+          <p class="sc-role">Badminton E-Commerce</p>
+          <p class="sc-desc">Full-stack marketplace for badminton enthusiasts — rackets, shuttlecocks, and gear. Smooth UX, real-time inventory, and a clean storefront built for the sport.</p>
+          <span class="sc-pill">Visit OfCourt ↗</span>
+        </a>
+
+        <a href="https://learn-anything-sooty.vercel.app/" target="_blank" class="sc-card sc-card-golden">
+          <div class="sc-top-row">
+            <span class="sc-num">03</span>
+            <span class="sc-date">2024</span>
+          </div>
+          <div class="sc-emoji">🎓</div>
+          <h3 class="sc-name">Learn Anything</h3>
+          <p class="sc-role">AI Learning Platform</p>
+          <p class="sc-desc">AI-powered platform that generates personalized curricula and interactive quizzes on any topic. Knowledge, on demand, for everyone.</p>
+          <span class="sc-pill">Visit Learn Anything ↗</span>
+        </a>
+
+        <a href="https://pageguide.github.io" target="_blank" class="sc-card sc-card-blue">
+          <div class="sc-top-row">
+            <span class="sc-num">04</span>
+            <span class="sc-date">2025</span>
+          </div>
+          <div class="sc-emoji">🔶</div>
+          <h3 class="sc-name">PageGuide</h3>
+          <p class="sc-role">Browser Extension · Research</p>
+          <p class="sc-desc">Browser extension using AI to help users navigate complex webpages, locate information, and understand page structure — published on arXiv.</p>
+          <span class="sc-pill">Visit PageGuide ↗</span>
         </a>
 
       </div>
@@ -258,6 +236,9 @@
 
       <div class="wt-item">
         <div class="wt-period">2024 – 2025</div>
+        <div class="wt-media">
+          <img src="images/ischool.jpg" alt="NLP iSchool Research Group" />
+        </div>
         <div class="wt-body">
           <h3>Natural Language Processing iSchool Research Group</h3>
           <p class="wt-role">NLP Developer · UT Austin, TX</p>
@@ -272,6 +253,9 @@
 
       <div class="wt-item">
         <div class="wt-period">2022 – 2025</div>
+        <div class="wt-media">
+          <img src="images/laits.jpeg" alt="Liberal Arts Instructional Technology Services" />
+        </div>
         <div class="wt-body">
           <h3>Liberal Arts Instructional Technology Services</h3>
           <p class="wt-role">Junior Software Developer · UT Austin, TX</p>
@@ -287,6 +271,9 @@
 
       <div class="wt-item">
         <div class="wt-period">2023 – 2024</div>
+        <div class="wt-media">
+          <img src="images/ai_in_medicine.jpg" alt="AI Health Lab" />
+        </div>
         <div class="wt-body">
           <h3>AI Health Lab <a href="https://aihealth.ischool.utexas.edu/team/about_us.html" target="_blank" class="inline-link">↗</a></h3>
           <p class="wt-role">NLP Research Assistant · UT Austin, TX</p>
@@ -301,6 +288,9 @@
 
       <div class="wt-item">
         <div class="wt-period">Summer 2023</div>
+        <div class="wt-media">
+          <img src="images/startup.jpg" alt="Claudius Legal Intelligence" />
+        </div>
         <div class="wt-body">
           <h3>Claudius Legal Intelligence Inc.</h3>
           <p class="wt-role">Software Engineering Intern · Remote</p>
@@ -381,7 +371,7 @@
       <span class="eyebrow-slash">/</span>
       Play
     </div>
-    <h2 class="section-title">A Bit About Me</h2>
+    <h2 class="section-title">A Bit More About Me</h2>
 
     <!-- ── Interactive numbered explorer ── -->
     <div class="num-explorer">
@@ -506,7 +496,9 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-left">
-        <span class="footer-logo">BT</span>
+        <span class="footer-logo" aria-hidden="true">
+          <img src="images/goat-clean.svg" alt="" class="footer-logo-mark" />
+        </span>
         <p>© <span id="copyright-year"></span> Thang T. Truong. All rights reserved.</p>
         <span class="footer-version">v5.0</span>
       </div>
