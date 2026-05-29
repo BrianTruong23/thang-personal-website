@@ -83,7 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
     p.style.transform = `rotate(${rot}deg) translateY(16px) scale(0.96)`;
   });
 
-  const staggerDelays = [0, 80, 160, 40, 120, 200];
+  // Top row first (0ms), middle (500ms), bottom (1000ms)
+  const staggerDelays = [0, 500, 1000, 0, 500, 1000];
 
   hero.addEventListener("mouseenter", () => {
     pics.forEach((p, i) => {
