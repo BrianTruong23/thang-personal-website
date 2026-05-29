@@ -151,10 +151,11 @@ nav ul li a:hover, nav ul li a.active {
   display: block;
 }
 
-/* Opacity/filter cascade is driven entirely by JS to avoid CSS-hover timing conflicts */
+/* Cascade driven by JS — focus fallback only */
 @media (hover:hover) and (pointer:fine) {
   .hero-block:focus-within .hero-polaroid { opacity: 1; filter: blur(0); }
 }
+
 
 /* Content sits above polaroids */
 .hero-content {

@@ -83,10 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
     p.style.transform = `rotate(${rot}deg) translateY(16px) scale(0.96)`;
   });
 
-  // Enter: top row (0ms) → middle (500ms) → bottom (1000ms)
-  const enterDelays = [0, 500, 1000, 0, 500, 1000];
-  // Leave: bottom fades first, top last
-  const leaveDelays = [1000, 500, 0, 1000, 500, 0];
+  // Enter: top pair first (0ms), remaining four after 1s
+  const enterDelays = [0, 1000, 1000, 0, 1000, 1000];
+  // Leave: bottom pair first (0ms), top pair last (1s)
+  const leaveDelays = [1000, 0, 0, 1000, 0, 0];
 
   function makeTransition(delay) {
     const ease = "cubic-bezier(0.22, 1, 0.36, 1)";
