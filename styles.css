@@ -175,15 +175,12 @@ nav ul li a:hover, nav ul li a.active {
 @keyframes blink { 0%,100% {opacity:1;} 50% {opacity:0;} }
 
 .button-container { display: flex; gap: 0.8rem; align-items: center; }
-.button-container a { text-decoration: none; }
 
-.button-container #resume, .button-container #philosophy {
+.button-container #philosophy {
   padding: 11px 22px; font-size: 0.8rem; font-weight: 500;
   letter-spacing: 0.05em; font-family: 'Inter', sans-serif;
   cursor: pointer; border-radius: 2px; transition: all 0.2s;
 }
-.button-container #resume { background: var(--text); color: var(--bg); border: 1px solid var(--text); }
-.button-container #resume:hover { background: var(--amber); border-color: var(--amber); color: #111; }
 .button-container #philosophy { background: transparent; color: var(--text); border: 1px solid var(--border); }
 .button-container #philosophy:hover { border-color: var(--orange); color: var(--orange); }
 
@@ -872,8 +869,7 @@ code { font-family: 'SF Mono','Fira Code','Consolas',monospace; font-size: 0.88r
   .hero-headline { font-size: 1.85rem; }
   .hero-meta { font-size: 0.92rem; }
   .button-container { flex-direction: column; align-items: stretch; }
-  .button-container a { width: 100%; }
-  .button-container #resume, .button-container #philosophy { width: 100%; }
+  .button-container #philosophy { width: 100%; }
   .profile-pic { width: 112px; height: 112px; }
   .section-title { font-size: 2rem; }
   .num-explorer-right { padding: 1.5rem 1rem; }
